@@ -405,6 +405,8 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
 </nav>
 
 <div class="controls">
+  <button class="ctl" id="btnZoomIn" type="button" aria-label="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 6v12M6 12h12"/></svg></button>
+  <button class="ctl" id="btnZoomOut" type="button" aria-label="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 12h12"/></svg></button>
   <button class="ctl" id="btnSound" type="button" aria-pressed="false" aria-label="Sound is off. Turn sea sound on">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
   </button>
@@ -415,7 +417,7 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M8 10h8M8 14h8M8 18h5"/></svg>
   </button>
 </div>
-<p class="hint" id="hint">Click an island or the sea to sail · drag to look around · WASD to steer</p>
+<p class="hint" id="hint">Click an island or the sea to sail · drag to look around · scroll to zoom · WASD to steer</p>
 
 <div id="intro" role="dialog" aria-labelledby="introTitle">
   <div class="intro-card">
@@ -1339,10 +1341,21 @@ addEventListener('keyup',e=>{ keys[e.key.toLowerCase()]=false; });
 
 /* camera orbit (drag) + click to sail */
 let camYaw=0, camDist=24, camPitch=0.42, dragging=false, downX=0, downY=0, moved=0, lastX=0, lastY=0;
-canvas.addEventListener('pointerdown',e=>{ dragging=true; moved=0; downX=lastX=e.clientX; downY=lastY=e.clientY; canvas.setPointerCapture(e.pointerId); canvas.classList.add('dragging'); });
-canvas.addEventListener('pointermove',e=>{ if(!dragging) return; const dx=e.clientX-lastX, dy=e.clientY-lastY; lastX=e.clientX; lastY=e.clientY; moved+=Math.abs(dx)+Math.abs(dy); camYaw-=dx*.006; camPitch=Math.min(1.1,Math.max(.12,camPitch+dy*.003)); });
-canvas.addEventListener('pointerup',e=>{ dragging=false; canvas.classList.remove('dragging'); if(moved<6) handleClick(e); });
-canvas.addEventListener('wheel',e=>{ e.preventDefault(); camDist=Math.min(60,Math.max(12,camDist+e.deltaY*.02)); },{passive:false});
+let zoom=1; const ZMIN=.5, ZMAX=2.2; const setZoom=z=>{ zoom=Math.min(ZMAX,Math.max(ZMIN,z)); };
+const pts=new Map(); let pinchD=0;
+const pdist=()=>{ const a=[...pts.values()]; return Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y); };
+canvas.addEventListener('pointerdown',e=>{ pts.set(e.pointerId,{x:e.clientX,y:e.clientY}); canvas.setPointerCapture(e.pointerId);
+  if(pts.size===2){ pinchD=pdist(); dragging=false; moved=99; return; }
+  dragging=true; moved=0; downX=lastX=e.clientX; downY=lastY=e.clientY; canvas.classList.add('dragging'); });
+canvas.addEventListener('pointermove',e=>{ if(pts.has(e.pointerId)) pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(pts.size===2){ const d=pdist(); if(pinchD>0) setZoom(zoom*pinchD/d); pinchD=d; return; }
+  if(!dragging) return; const dx=e.clientX-lastX, dy=e.clientY-lastY; lastX=e.clientX; lastY=e.clientY; moved+=Math.abs(dx)+Math.abs(dy); camYaw-=dx*.006; camPitch=Math.min(1.1,Math.max(.12,camPitch+dy*.003)); });
+const pend=e=>{ const was=pts.size; pts.delete(e.pointerId); if(was===2){ pinchD=0; dragging=false; moved=99; canvas.classList.remove('dragging'); return; }
+  if(!dragging) return; dragging=false; canvas.classList.remove('dragging'); if(moved<6&&e.type==='pointerup') handleClick(e); };
+canvas.addEventListener('pointerup',pend); canvas.addEventListener('pointercancel',pend);
+canvas.addEventListener('wheel',e=>{ e.preventDefault(); setZoom(zoom*Math.exp(e.deltaY*.0012)); },{passive:false});
+$('#btnZoomIn').addEventListener('click',()=>setZoom(zoom/1.3));
+$('#btnZoomOut').addEventListener('click',()=>setZoom(zoom*1.3));
 const ray=new THREE.Raycaster(), mouse=new THREE.Vector2(), seaPlane=new THREE.Plane(new THREE.Vector3(0,1,0),0);
 function handleClick(e){
   hideIntro();
@@ -1486,12 +1499,12 @@ function step(){
     const look=tmp.set(I.pos[0],0,I.pos[1]).addScaledVector(I.dir,I.r*.7);
     look.lerp(person.position, P.mode==='aboard'?0.3:0.6); look.y=2.6;
     const off=tmp2.copy(I.dir).multiplyScalar(13).addScaledVector(I.side,-15); off.y=0;   // pier side, ship behind
-    off.applyAxisAngle(UP,camYaw); off.y=7+camPitch*6;
+    off.applyAxisAngle(UP,camYaw); off.multiplyScalar(zoom); off.y=(7+camPitch*6)*zoom;
     camPos.lerp(tmp3.copy(look).add(off), Math.min(1,dt*1.6));
     camLook.lerp(look, Math.min(1,dt*2.2));
   } else {
     const yaw=nav.heading+Math.PI+camYaw;
-    const dist=camDist*(innerWidth<640?1.25:1);
+    const dist=camDist*zoom*(innerWidth<640?1.25:1);
     tmp.set(sx+Math.sin(yaw)*Math.cos(camPitch)*dist, 3+Math.sin(camPitch)*dist, sz+Math.cos(yaw)*Math.cos(camPitch)*dist);
     camPos.lerp(tmp, Math.min(1,dt*1.8));
     camLook.lerp(tmp.set(sx+sh*6, 3.5, sz+ch*6), Math.min(1,dt*3));
