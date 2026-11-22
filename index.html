@@ -1183,8 +1183,7 @@ const person=new THREE.Group(); scene.add(person); const _fv=new THREE.Vector3()
       x.save(); x.beginPath(); x.arc(128,128,116,0,Math.PI*2); x.clip(); x.drawImage(im,12,12,232,232); x.restore();
       const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; faceMat.map=t; faceMat.needsUpdate=true; };
     im.onerror=()=>{ face.visible=false; }; im.src='img/face.jpg'; }
-  add(person,new THREE.CylinderGeometry(.36,.36,.12,16),cap,0,2.5,0);
-  add(person,new THREE.BoxGeometry(.4,.05,.26),cap,0,2.46,.3);
+  person.userData.cap=[add(person,new THREE.CylinderGeometry(.36,.36,.12,16),cap,0,2.5,0), add(person,new THREE.BoxGeometry(.4,.05,.26),cap,0,2.46,.3)];
   const limb=(x,y,len,w,m)=>{ const g=new THREE.Group(); g.position.set(x,y,0); person.add(g); add(g,new THREE.BoxGeometry(w,len,w+.02),m,0,-len/2,0); return g; };
   Object.assign(person.userData,{ legL:limb(-.14,.86,.84,.17,pants), legR:limb(.14,.86,.84,.17,pants), armL:limb(-.4,1.6,.66,.13,shirt), armR:limb(.4,1.6,.66,.13,shirt) });
 }
@@ -1487,7 +1486,7 @@ function step(){
   sun.position.copy(lightDir).multiplyScalar(200).add(ship.position); sun.target.position.copy(ship.position);
 
   { // keep the face portrait just in front of the body, on the camera side, so the shirt never covers it
-    const f=person.userData.face; if(f){ person.updateMatrixWorld(); _fv.copy(camera.position); person.worldToLocal(_fv); _fv.y=0; if(_fv.lengthSq()>1e-6) _fv.normalize(); f.position.set(_fv.x*.42,2.08,_fv.z*.42); } }
+    const f=person.userData.face; if(f){ person.updateMatrixWorld(); _fv.copy(camera.position); person.worldToLocal(_fv); _fv.y=0; if(_fv.lengthSq()>1e-6) _fv.normalize(); const k=.33; f.position.set(_fv.x*k,2.08,_fv.z*k); const c=person.userData.cap; if(c){ c[0].position.x=_fv.x*k; c[0].position.z=_fv.z*k; c[1].position.x=_fv.x*k; c[1].position.z=_fv.z*k+.3; } } }
   renderer.render(scene,camera);
   updateLabels();
   requestAnimationFrame(step);
