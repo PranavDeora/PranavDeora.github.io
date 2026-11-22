@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranav Deora | Pranav's Voyage</title>
+<meta name="description" content="Pranav Deora is the co-founder of Shazlo, a Supply Chain Management student at Ahmedabad University (CGPA 3.89) and an Erasmus+ scholar at the University of Valladolid. Sail between islands to explore his story.">
+<meta name="author" content="Pranav Deora">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pranavdeora.github.io/">
+<meta name="theme-color" content="#06121f">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Pranav's Voyage">
+<meta property="og:title" content="Pranav Deora | Pranav's Voyage">
+<meta property="og:description" content="Co-founder of Shazlo · Supply Chain Management at Ahmedabad University · Erasmus+ scholar. Sail a ship between islands to read my story.">
+<meta property="og:url" content="https://pranavdeora.github.io/">
+<meta property="og:image" content="https://pranavdeora.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="profile:first_name" content="Pranav">
+<meta property="profile:last_name" content="Deora">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pranav Deora | Pranav's Voyage">
+<meta name="twitter:description" content="Co-founder of Shazlo · Supply chain student · Erasmus+ scholar.">
+<meta name="twitter:image" content="https://pranavdeora.github.io/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2306121f'/%3E%3Cpath d='M26 52 L29 22 H35 L38 52Z' fill='%23f1efe8'/%3E%3Cpath d='M27.3 40 H36.7 L37.3 46 H26.7Z M28.4 29 H35.6 L36.1 34 H27.9Z' fill='%23c8372d'/%3E%3Crect x='28' y='15' width='8' height='7' rx='2' fill='%23ffc96b'/%3E%3Cpath d='M32 10 L37 15 H27Z' fill='%23c8372d'/%3E%3Cpath d='M10 56 Q20 52 32 56 T54 56' stroke='%239fb6c3' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Pranav Deora",
+  "url": "https://pranavdeora.github.io/",
+  "image": "https://pranavdeora.github.io/og-image.jpg",
+  "jobTitle": "Co-Founder & CEO",
+  "worksFor": {"@type": "Organization", "name": "Shazlo", "url": "https://shazlo.store"},
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Ahmedabad University"},
+    {"@type": "CollegeOrUniversity", "name": "Universidad de Valladolid"}
+  ],
+  "homeLocation": {"@type": "Place", "name": "Ahmedabad, Gujarat, India"},
+  "birthPlace": {"@type": "Place", "name": "Jalore, Rajasthan, India"},
+  "knowsAbout": ["Supply Chain Management", "Strategic Sourcing", "Vendor Management", "Oracle ERP", "International Trade", "Fashion e-commerce", "Entrepreneurship"],
+  "knowsLanguage": ["English", "Hindi", "Marwari", "Spanish"],
+  "sameAs": [
+    "https://www.linkedin.com/in/pranav-deora",
+    "https://www.instagram.com/pranav_deora_/",
+    "https://www.youtube.com/@pranavdeora"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout idea: a living night sea fills the screen; a ship's-log panel slides in from the right when the ship docks. */
+  --abyss:#06121f;        /* deepest background */
+  --hull:#0d2236;         /* panel surface */
+  --foam:#e9f1f4;         /* main text */
+  --mist:#9fb6c3;         /* secondary text */
+  --beam:#ffc96b;         /* lighthouse amber accent */
+  --signal:#ff6b4a;       /* buoy red, used sparingly */
+  --line:rgba(159,182,195,.18);
+  --font-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--abyss);color:var(--foam);font-family:var(--font-body);font-size:16px;line-height:1.55;overflow:hidden;-webkit-font-smoothing:antialiased}
+a{color:var(--beam);text-underline-offset:3px}
+a:hover{color:#ffe0a6}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--beam);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+.mono{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em;color:var(--mist)}
+#scene{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#scene.dragging{cursor:grabbing}
+
+/* ---------- top bar ---------- */
+.topbar{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;pointer-events:none;z-index:5}
+.brand{pointer-events:auto;display:flex;flex-direction:column;background:rgba(6,18,31,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:8px 14px;cursor:pointer;text-align:left}
+.brand b{font-family:var(--font-display);font-size:1.05rem;font-weight:600}
+.brand span{font-family:var(--font-mono);font-size:.68rem;color:var(--mist);letter-spacing:.06em;text-shadow:0 1px 6px rgba(2,8,16,.9)}
+.nav{pointer-events:auto;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;background:rgba(6,18,31,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:5px}
+.nav button{background:none;border:0;padding:7px 11px;border-radius:9px;font-size:.86rem;cursor:pointer;color:var(--mist)}
+.nav button:hover{background:rgba(255,201,107,.1);color:var(--foam)}
+.nav button[aria-current="true"]{background:rgba(255,201,107,.2);color:var(--foam);font-weight:600;box-shadow:inset 0 0 0 1px rgba(255,201,107,.5)}
+
+.menu-btn{display:none;pointer-events:auto;align-items:center;gap:8px;background:rgba(6,18,31,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:10px 14px;cursor:pointer;font-size:.92rem;font-weight:600}
+.menu-btn svg{width:18px;height:18px}
+.mnav{position:fixed;top:70px;right:12px;left:12px;z-index:9;display:flex;flex-direction:column;gap:4px;padding:8px;background:rgba(6,18,31,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.mnav[hidden]{display:none}
+.mnav button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;background:none;border:0;border-radius:10px;padding:11px 12px;cursor:pointer}
+.mnav button b{font-size:1rem}
+.mnav button span{font-size:.8rem;color:var(--mist)}
+.mnav button[aria-current="true"],.mnav button:hover{background:rgba(255,201,107,.14)}
+/* ---------- controls ---------- */
+.controls{position:fixed;left:18px;bottom:18px;display:flex;flex-direction:column;gap:8px;z-index:6}
+.ctl{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(6,18,31,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;cursor:pointer;color:var(--foam)}
+.ctl:hover{border-color:var(--beam)}
+.ctl[aria-pressed="true"]{border-color:var(--beam);color:var(--beam)}
+.ctl{position:relative}
+.ctl::after{content:attr(aria-label);position:absolute;left:54px;top:50%;transform:translateY(-50%);white-space:nowrap;background:rgba(6,18,31,.92);color:var(--foam);border:1px solid var(--line);padding:5px 10px;border-radius:8px;font-family:var(--font-body);font-size:.8rem;opacity:0;pointer-events:none;transition:opacity .15s}
+.ctl:hover::after,.ctl:focus-visible::after{opacity:1}
+.ctl svg{width:20px;height:20px}
+.hint{position:fixed;left:76px;bottom:24px;z-index:5;font-family:var(--font-mono);font-size:.72rem;color:var(--mist);text-shadow:0 1px 6px rgba(2,8,16,.95);letter-spacing:.04em;pointer-events:none;max-width:60vw}
+
+/* ---------- island labels ---------- */
+#labels{position:fixed;inset:0;pointer-events:none;z-index:3}
+.label{position:absolute;left:0;top:0;pointer-events:auto;transform:translate(-50%,-100%);background:rgba(6,18,31,.72);border:1px solid var(--line);color:var(--foam);padding:5px 11px 6px;border-radius:999px;font-size:.82rem;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:7px;transition:border-color .2s}
+.label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--beam);box-shadow:0 0 8px var(--beam)}
+.label:hover{border-color:var(--beam)}
+.label.contact::before{background:var(--signal);box-shadow:0 0 8px var(--signal)}
+
+/* ---------- intro ---------- */
+#intro{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:16px;background:radial-gradient(ellipse 60% 55% at 50% 48%,rgba(6,18,31,.5),rgba(6,18,31,.18) 70%,rgba(6,18,31,.05));transition:opacity .8s ease}
+#intro.gone{opacity:0;pointer-events:none}
+.intro-card{max-width:560px;width:100%;text-align:left;display:flex;flex-direction:column;gap:18px;text-shadow:0 1px 12px rgba(2,8,16,.9),0 1px 3px rgba(2,8,16,.8)}
+.intro-card .mono{color:var(--beam)}
+.intro-card h1{font-size:clamp(2.4rem,7vw,4.2rem);letter-spacing:-.01em}
+.intro-card p{margin:0;color:#ffffff;max-width:46ch;font-size:1.08rem;font-weight:500;text-shadow:0 1px 2px rgba(2,8,16,.9),0 0 14px rgba(2,8,16,.75)}
+.intro-actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{text-shadow:none;border-radius:12px;padding:12px 18px;cursor:pointer;border:1px solid var(--line);background:rgba(13,34,54,.7);font-weight:500}
+.btn:hover{border-color:var(--beam)}
+.btn.primary{background:var(--beam);color:#1a1205;border-color:var(--beam)}
+.btn.primary:hover{background:#ffd88f}
+.intro-foot{font-family:var(--font-mono);font-size:.72rem;color:var(--mist)}
+
+/* ---------- panel ---------- */
+#panel{position:fixed;top:0;right:0;height:100%;width:min(520px,100%);z-index:10;background:linear-gradient(180deg,rgba(13,34,54,.96),rgba(6,18,31,.97));border-left:1px solid var(--line);transform:translateX(102%);transition:transform .55s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+#panel.open{transform:none}
+.panel-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.panel-close{background:none;border:1px solid var(--line);border-radius:10px;padding:6px 12px;cursor:pointer;color:var(--mist)}
+.panel-close:hover{color:var(--foam);border-color:var(--beam)}
+.panel-body{overflow-y:auto;padding:22px 24px 40px;overscroll-behavior:contain}
+
+/* ---------- shared content styles ---------- */
+.sec{display:flex;flex-direction:column;gap:16px}
+.sec h2{font-size:1.9rem}
+.sec h3{font-size:1.15rem;margin-top:8px}
+.sec p{margin:0;max-width:62ch;color:#d4e1e7}
+.kicker{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--beam)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:rgba(6,18,31,.4)}
+.stat b{display:block;font-family:var(--font-display);font-size:1.45rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--foam)}
+.stat span{font-size:.8rem;color:var(--mist);line-height:1.35;display:block}
+.log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-left:1px dashed rgba(255,201,107,.4);margin-left:6px}
+.log li{position:relative;padding:0 0 20px 20px}
+.log li::before{content:"";box-sizing:border-box;position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--abyss);border:2px solid var(--beam)}
+.log .when{font-family:var(--font-mono);font-size:.72rem;color:var(--mist);letter-spacing:.03em}
+.log .what{font-weight:600;margin:2px 0}
+.log .where{font-size:.86rem;color:var(--mist)}
+.log p{font-size:.93rem;margin-top:4px}
+.log ul{margin:6px 0 0;padding-left:18px;font-size:.93rem;color:#d4e1e7}
+.log ul li{padding:0;margin:2px 0}
+.log ul li::before{display:none}
+blockquote{margin:0;padding:12px 16px;border-left:3px solid var(--beam);background:rgba(255,201,107,.06);border-radius:0 10px 10px 0;font-family:var(--font-display);font-size:1.08rem;line-height:1.45}
+blockquote cite{display:block;margin-top:6px;font-family:var(--font-mono);font-size:.7rem;font-style:normal;color:var(--mist)}
+blockquote cite a{color:var(--mist)}
+blockquote cite a:hover{color:var(--beam)}
+a.stat:hover{border-color:var(--beam)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:#d4e1e7}
+.links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.links li{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:rgba(6,18,31,.35)}
+.links .src{font-family:var(--font-mono);font-size:.7rem;color:var(--mist);letter-spacing:.04em}
+.links a{display:block;font-weight:600;margin:2px 0}
+.links p{font-size:.88rem;color:var(--mist)}
+.ports{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 14px}
+.ports div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);padding:4px 0;font-size:.9rem}
+.ports .mono{font-size:.68rem}
+.note{font-size:.8rem;color:var(--mist)}
+
+/* swipe demo */
+.swipe{position:relative;height:250px;max-width:300px;width:100%;margin:6px auto 0}
+.card{position:absolute;inset:0;border-radius:18px;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.35);touch-action:none;cursor:grab;user-select:none;transition:transform .35s ease, opacity .35s ease}
+.card b{font-family:var(--font-display);font-size:1.25rem}
+.card span{font-size:.8rem;opacity:.9}
+.card .tag{position:absolute;top:14px;left:14px;font-family:var(--font-mono);font-size:.65rem;background:rgba(0,0,0,.35);padding:3px 8px;border-radius:999px}
+.swipe-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+.swipe-btns button.wide{width:auto;border-radius:999px;padding:0 16px;font-size:.88rem}
+.swipe-count{text-align:center;font-family:var(--font-mono);font-size:.72rem}
+.swipe-btns button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(6,18,31,.5);cursor:pointer;font-size:1.1rem}
+.swipe-btns button:hover{border-color:var(--beam)}
+
+.copyrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.copyrow code{font-family:var(--font-mono);background:rgba(6,18,31,.6);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:.88rem}
+
+/* text version */
+#textlog{position:fixed;inset:0;z-index:15;overflow-y:auto;background:var(--abyss);display:none}
+#textlog.open{display:block}
+.tl-wrap{max-width:1100px;margin:0 auto;padding:28px 20px 80px;display:grid;grid-template-columns:300px 1fr;gap:48px}
+.tl-side{position:sticky;top:28px;align-self:start;display:flex;flex-direction:column;gap:14px}
+.tl-side h1{font-size:2.4rem}
+.tl-side p{margin:0;color:var(--mist)}
+.tl-side nav{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.tl-side nav a{color:var(--mist);text-decoration:none;font-size:.92rem;padding:3px 0}
+.tl-side nav a:hover{color:var(--foam)}
+.tl-main{display:flex;flex-direction:column;gap:64px;min-width:0}
+.tl-main .sec{scroll-margin-top:24px}
+
+@media (max-width:820px){
+  .tl-wrap{grid-template-columns:1fr;gap:28px}
+  .tl-side{position:static}
+}
+@media (max-width:640px){
+  .nav{display:none}
+  .menu-btn{display:flex}
+  .brand span{font-size:.62rem}
+  .ctl::after{display:none}
+  .hint{display:none}
+  #panel{width:100%;top:auto;bottom:0;height:78%;border-left:0;border-top:1px solid var(--line);border-radius:18px 18px 0 0;transform:translateY(102%)}
+  #panel.open{transform:none}
+  .label{font-size:.75rem;padding:4px 9px}
+}
+@media (prefers-reduced-motion:reduce){
+  #panel,#intro,.card{transition:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="scene" aria-label="A 3D sea with a ship sailing between islands. Each island opens a part of Pranav Deora's story."></canvas>
+<div id="labels"></div>
+
+<header class="topbar">
+  <button class="brand" id="brand" type="button" aria-label="Sail back to Home Port">
+    <b>Pranav Deora</b>
+    <span>23.03°N 72.58°E · AHMEDABAD</span>
+  </button>
+  <nav class="nav" id="nav" aria-label="Islands">
+    <button type="button" data-go="about">Home Port</button>
+    <button type="button" data-go="shazlo">Shazlo</button>
+    <button type="button" data-go="voyage">Voyage Log</button>
+    <button type="button" data-go="erasmus">Erasmus</button>
+    <button type="button" data-go="press">Press &amp; Media</button>
+    <button type="button" data-go="contact">Lighthouse</button>
+  </nav>
+  <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav">Islands
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</header>
+<nav class="mnav" id="mnav" aria-label="Islands" hidden>
+  <button type="button" data-go="about"><b>Home Port</b><span>About me, education, awards</span></button>
+  <button type="button" data-go="shazlo"><b>Shazlo</b><span>My startup</span></button>
+  <button type="button" data-go="voyage"><b>Voyage Log</b><span>Experience</span></button>
+  <button type="button" data-go="erasmus"><b>Erasmus</b><span>My semester in Spain</span></button>
+  <button type="button" data-go="press"><b>Press &amp; Media</b><span>Stories, podcast, radio</span></button>
+  <button type="button" data-go="contact"><b>Lighthouse</b><span>Contact me</span></button>
+  <button type="button" data-text><b>Read as text</b><span>Everything on one page</span></button>
+</nav>
+
+<div class="controls">
+  <button class="ctl" id="btnSound" type="button" aria-pressed="false" aria-label="Sound is off. Turn sea sound on">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+  </button>
+  <button class="ctl" id="btnNight" type="button" aria-pressed="false" aria-label="Switch to night">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+  </button>
+  <button class="ctl" id="btnLog" type="button" aria-label="Read everything as text">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M8 10h8M8 14h8M8 18h5"/></svg>
+  </button>
+</div>
+<p class="hint" id="hint">Click an island or the sea to sail · drag to look around · WASD to steer</p>
+
+<div id="intro" role="dialog" aria-labelledby="introTitle">
+  <div class="intro-card">
+    <span class="mono">SHIP'S LOG · VOL. 2026</span>
+    <h1 id="introTitle">Pranav Deora</h1>
+    <p>Co-founder of Shazlo. Supply chain student at Ahmedabad University. Erasmus+ scholar who sailed to Spain and came back with a new view of the world. Each island holds one part of the story.</p>
+    <div class="intro-actions">
+      <button class="btn primary" id="sailSound" type="button">Set sail with sound</button>
+      <button class="btn" id="sailQuiet" type="button">Set sail quietly</button>
+      <button class="btn" id="readLog" type="button">Read as text</button>
+    </div>
+    <span class="intro-foot">Best with headphones. The lighthouse is where you can reach me.</span>
+  </div>
+</div>
+
+<aside id="panel" aria-live="polite" aria-label="Island details">
+  <div class="panel-head">
+    <span class="mono" id="panelCoords">DOCKED</span>
+    <button class="panel-close" id="panelClose" type="button" aria-label="Close this panel">Close ✕</button>
+  </div>
+  <div class="panel-body" id="panelBody"></div>
+</aside>
+
+<div id="textlog" aria-label="Full text version">
+  <div class="tl-wrap">
+    <aside class="tl-side">
+      <span class="mono" style="color:var(--beam)">SHIP'S LOG · TEXT EDITION</span>
+      <h1>Pranav Deora</h1>
+      <p>Co-founder of Shazlo · BBA (Hons) Supply Chain Management, Ahmedabad University · Erasmus+ scholar</p>
+      <nav aria-label="Sections">
+        <a href="#t-about">Home Port: about me</a>
+        <a href="#t-shazlo">Shazlo</a>
+        <a href="#t-voyage">Voyage Log: experience</a>
+        <a href="#t-erasmus">Erasmus in Spain</a>
+        <a href="#t-press">Press &amp; Media</a>
+        <a href="#t-contact">Lighthouse: contact</a>
+      </nav>
+      <div><button class="btn primary" id="backToSea" type="button">Back to the sea</button></div>
+    </aside>
+    <main class="tl-main" id="tlMain">
+<section class="sec" id="t-about">
+    <span class="kicker">Home Port · Ahmedabad</span>
+    <h2>Hi, I'm Pranav.</h2>
+    <p>I was born in Jalore, Rajasthan, spent ten years at boarding school in Mount Abu, and switched from science to business when I came to Ahmedabad University. I'm now in my final year of a BBA (Honours) in Supply Chain Management, building a fashion-discovery startup called Shazlo on the side.</p>
+    <p>My interests sit where supply chain management, ERP and international trade meet. In 2026 an Erasmus+ scholarship took me out of India for the first time, to study international business at the University of Valladolid in Spain.</p>
+    <div class="stats">
+      <div class="stat"><b>3.89/4</b><span>CGPA, Ahmedabad University</span></div>
+      <div class="stat"><b>99th</b><span>percentile, Dean's Recognition Award 2024–25</span></div>
+      <div class="stat"><b>1 of 5</b><span>Annual Merit Scholarship, from about 400 students</span></div>
+      <div class="stat"><b>€5,500</b><span>EU funding, Erasmus+ semester in Spain</span></div>
+    </div>
+    <h3>Education</h3>
+    <ul class="log">
+      <li><span class="when">2023 – 2027</span><div class="what">BBA (Honours), Supply Chain Management</div><div class="where">Ahmedabad University · Amrut Mody School of Management · CGPA 3.89/4.00</div><p>Coursework includes Operations Management, Supply Chain Management, Supply Chain Analytics, Logistics &amp; Transport, Decision Sciences, Financial Modelling and People Analytics.</p></li>
+      <li><span class="when">Jan – Jun 2026</span><div class="what">Erasmus+ Semester Exchange</div><div class="where">Universidad de Valladolid, Spain · Facultad de Comercio · 8.13/10</div><p>International Trade, International Tax System, Consumer Behaviour, Negotiation in Asia, Expatriate Management, International Legal System.</p></li>
+      <li><span class="when">until 2020</span><div class="what">St. Mary's High School, Mount Abu</div><div class="where">Most Diligent Student Award, Grade 10</div></li>
+    </ul>
+    <h3>Honours &amp; Awards</h3>
+    <ul class="log">
+      <li><span class="when">2026</span><div class="what">Erasmus+ Semester Exchange Scholarship</div><div class="where">Fully funded semester at the University of Valladolid</div></li>
+      <li><span class="when">2026</span><div class="what">Erasmus+ Youth Exchange, Benicàssim</div><div class="where">India's only participant in "Click for Change! Young People Against Digital Hate"</div></li>
+      <li><span class="when">2025 – 2027</span><div class="what">Annual Merit Scholarship</div><div class="where">One of five students selected from about 400 · 50% tuition waiver</div></li>
+      <li><span class="when">2024 – 2025</span><div class="what">Dean's Recognition Award</div><div class="where">Top 1% for academic performance</div></li>
+    </ul>
+    <h3>Lessons from the voyage so far</h3>
+    <blockquote>Opportunities come from the right connections, the right mindset, and the courage to take initiative.<cite><a href="https://ahduni.edu.in/blog/how-a-chance-encounter-landed-me-an-internship-with-forbes-marshall/" target="_blank" rel="noopener">FROM MY STORY ON THE AHMEDABAD UNIVERSITY BLOG, OCT 2025 ↗</a></cite></blockquote>
+    <blockquote>Ahmedabad University gave me that platform; Forbes Marshall gave me the stage to perform.<cite><a href="https://ahduni.edu.in/blog/how-a-chance-encounter-landed-me-an-internship-with-forbes-marshall/" target="_blank" rel="noopener">READ THE FULL STORY ↗</a></cite></blockquote>
+    <h3>Toolkit</h3>
+    <div class="chips"><span class="chip">Oracle ERP</span><span class="chip">Strategic sourcing</span><span class="chip">Vendor management</span><span class="chip">Power BI</span><span class="chip">Excel</span><span class="chip">R</span><span class="chip">Gurobi</span><span class="chip">5S &amp; Kaizen</span><span class="chip">Negotiation</span><span class="chip">Public speaking</span><span class="chip">Event management</span></div>
+    <h3>Languages</h3>
+    <div class="chips"><span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Marwari</span><span class="chip">Spanish (learning)</span></div>
+  </section>
+<section class="sec" id="t-shazlo">
+    <span class="kicker">Shazlo Island · co-founded Oct 2025</span>
+    <h2>Swipe to style.</h2>
+    <p>Shazlo is a swipe-based fashion discovery app for small brands and local stores, built for Millennials and Gen Z. You swipe through pieces you like, organise your finds, and buy straight from each brand's own website. Small, sustainable, artisan and local labels get seen by people who would never find them on a big marketplace.</p>
+    <p>I co-founded it with Darsh Modi, Maurya Samanta and Nabyendu Das, and I lead it as CEO.</p>
+    <div class="stats">
+      <div class="stat"><b>₹75,000</b><span>SSIP 2.0 grant, Government of Gujarat</span></div>
+      <div class="stat"><b>5</b><span>fashion brands signed to list products</span></div>
+      <div class="stat"><b>2</b><span>app stores: App Store and Google Play, ahead of public launch</span></div>
+      <div class="stat"><b>Gen Z</b><span>and Millennial shoppers as the first audience</span></div>
+    </div>
+    <h3>Try the idea</h3>
+    <p class="note">Demo cards to show the swipe. These are not real listings.</p>
+    <div class="swipe" data-swipe></div>
+    <div class="swipe-btns"><button type="button" data-act="pass" aria-label="Pass">✕</button><button type="button" class="wide" data-act="closet">Put to closet</button><button type="button" class="wide" data-act="bag">Add to bag</button><button type="button" data-act="like" aria-label="Like">♥</button></div>
+    <p class="note swipe-count" aria-live="polite">Liked 0 · Closet 0 · Bag 0</p>
+    <ul class="links">
+      <li><span class="src">WEBSITE</span><a href="https://shazlo.store" target="_blank" rel="noopener">shazlo.store</a></li>
+      <li><span class="src">INSTAGRAM</span><a href="https://www.instagram.com/shazlo.store/" target="_blank" rel="noopener">@shazlo.store</a></li>
+    </ul>
+  </section>
+<section class="sec" id="t-voyage">
+    <span class="kicker">Voyage Log · experience</span>
+    <h2>Ports of call</h2>
+    <p>Newest entries first, the way a ship's log reads backwards from today.</p>
+    <ul class="log">
+      <li><span class="when">AUG 2026 – NOW · 23.03°N 72.58°E</span><div class="what">Capstone project, Arvind Advanced Materials (AAML)</div><div class="where">Ahmedabad University · team of four</div><p>Building a U.S. market-entry strategy in dry filtration for Dalco GFT, the U.S. nonwovens manufacturer AAML recently acquired.</p></li>
+      <li><span class="when">JUL 2026 · 23.03°N 72.58°E</span><div class="what">Climate Fellow, Ahmedabad University × University of Chicago</div><div class="where">1 of 30 fellows · two-week residential programme</div><p>Worked in a six-member team on methane capture at Ahmedabad's Pirana landfill, with source-level waste segregation as the long-term fix.</p></li>
+      <li><span class="when">JAN – JUN 2026 · 41.65°N 4.72°W</span><div class="what">Erasmus+ exchange, Universidad de Valladolid</div><div class="where">Spain · class representative, International Trade</div><p>Sail to Erasmus Island for the full story.</p></li>
+      <li><span class="when">OCT 2025 – NOW</span><div class="what">Co-founder &amp; CEO, Shazlo</div><div class="where">Ahmedabad</div><p>Swipe-based fashion discovery; ₹75,000 SSIP 2.0 grant.</p></li>
+      <li><span class="when">AUG – DEC 2025</span><div class="what">Google Gemini Student Ambassador</div><div class="where">Also a Perplexity ambassador</div><p>Ran AI workshops on campus, including "Beyond Prompt" for students in the Student Village.</p></li>
+      <li><span class="when">MAY – JUL 2025 · 18.76°N 73.86°E</span><div class="what">Project Trainee, Supply Chain Excellence, Forbes Marshall</div><div class="where">Chakan, Pune</div>
+        <ul>
+          <li>Built a strategic vendor database to improve sourcing coordination across five divisions.</li>
+          <li>Supported the Vendor Code of Conduct rollout across 271 suppliers identified through the 80/20 principle.</li>
+          <li>Coordinated an NFC-enabled PPE vending machine to improve accountability and reduce waste.</li>
+          <li>Created Blanket Purchase Agreements and sourcing rules in Oracle ERP.</li>
+          <li>Learned Kanban bins, raw-material storage, Incoterms and CNC machining on the shop floor.</li>
+        </ul></li>
+      <li><span class="when">DEC 2024</span><div class="what">Research associate, "Navigating the World: A Leadership Journey"</div><div class="where">Nayanta Education Foundation × Ahmedabad University</div><p>Helped senior industry leaders build strategy for India to lead the global Active Pharmaceutical Ingredient (API) industry. That evening I met Dr Naushad Forbes, which led to my Forbes Marshall internship.</p></li>
+      <li><span class="when">OCT 2024 – NOW</span><div class="what">Vice-Chancellor's Student Advisory Committee</div><div class="where">Handpicked as 1 of 15 students</div><p>Fortnightly meetings with the Vice-Chancellor on placements, student engagement and advising.</p></li>
+      <li><span class="when">OCT 2024 – NOW</span><div class="what">Leadership Series Committee, Amrut Mody School of Management</div><p>Ran talks with Uday Kotak, Naushad Forbes, Ashish Chauhan, Rajesh Gopinathan and others.</p></li>
+      <li><span class="when">2024 – NOW</span><div class="what">Peer Tutor, Ahmedabad University</div><p>Nine courses tutored, including Supply Chain Analytics, Operations Management, Probability, Statistics and Financial Management.</p></li>
+      <li><span class="when">AUG 2024 – DEC 2025</span><div class="what">Work Study Programme, Centre for Learning Futures</div><p>Summer schools (Ahmedabad Grand Challenges Programme, Junior Scholars Programme), course design workshops, AI workshops and orientation.</p></li>
+      <li><span class="when">JUL 2024 – JUL 2025</span><div class="what">Student Mitr</div><p>Mentored 16 incoming students through their first year.</p></li>
+      <li><span class="when">JUN – AUG 2024</span><div class="what">Project Intern, AllEvents</div><div class="where">Ahmedabad · my first internship</div><p>Researched and built "Things To Do" activity pages, from go-karting to heritage walks.</p></li>
+      <li><span class="when">JAN 2024 – MAY 2025</span><div class="what">Radio jockey, then Head of Management, Stepwell Radio</div><div class="where">Ahmedabad University's student-run radio station</div></li>
+      <li><span class="when">SEP 2023 – JUN 2024</span><div class="what">Undergraduate Research Programme</div><p>Annotated resumes for an open Resume Corpus dataset (named-entity recognition, 36 entities). Second on the task leaderboard.</p></li>
+      <li><span class="when">2023 – 2024</span><div class="what">Conferences</div><p>Headed the Annual Economic Conference; committee member for the 5th Annual Heritage Conference and the Asia Pacific Innovation Conference.</p></li>
+    </ul>
+  </section>
+<section class="sec" id="t-erasmus">
+    <span class="kicker">Erasmus Island · 41.65°N 4.72°W</span>
+    <h2>Five months that changed me</h2>
+    <p>Before Valladolid I had never left India. I landed in Madrid nervous and unsure whether I could manage alone. Within weeks I was cooking every day, running a house, handling bank payments and budgets myself. Erasmus+ was much more than an exchange semester.</p>
+    <div class="stats">
+      <div class="stat"><b>8.13/10</b><span>average grade at Valladolid</span></div>
+      <div class="stat"><b>35</b><span>guests at the Indian dinner I hosted, with garba lessons</span></div>
+      <div class="stat"><b>4,300</b><span>walkers at Marcha Asprona, the charity march I helped run</span></div>
+      <div class="stat"><b>30</b><span>young people from 9 countries at Click for Change</span></div>
+    </div>
+    <h3>What I did</h3>
+    <ul class="log">
+      <li><div class="what">Elected class representative</div><p>For International Trade, by anonymous vote. Helped Professor Santiago Enciso run the course's company visits and extracurricular activities.</p></li>
+      <li><div class="what">Shared India</div><p>Hosted an Indian dinner, gave a talk on India and taught garba. Recorded the ESN Valladolid podcast <a href="https://open.spotify.com/episode/6StbaM3r4bUZO9o5kpWnux" target="_blank" rel="noopener">Nation to Nation: India with Pranav</a>.</p></li>
+      <li><div class="what">Click for Change! Young People Against Digital Hate</div><p>A fully funded six-day Erasmus+ youth exchange in Benicàssim on hate speech and misinformation, with travel and stay covered. We stayed at a youth hostel right on the beach. I was India's only participant, and it was my first time at a beach.</p></li>
+      <li><div class="what">Learned beyond class</div><p>Food Innovation Hackathon, European Values Session, III Interuniversity Conference on Development Cooperation. At Casa de la India I found out that Ahmedabad and Valladolid are sister cities.</p></li>
+    </ul>
+    <h3>Ports visited</h3>
+    <div class="ports">
+      <div><span>Valladolid</span><span class="mono">41.65°N</span></div>
+      <div><span>Madrid</span><span class="mono">40.42°N</span></div>
+      <div><span>Barcelona</span><span class="mono">41.39°N</span></div>
+      <div><span>Ibiza</span><span class="mono">38.91°N</span></div>
+      <div><span>Valencia</span><span class="mono">39.47°N</span></div>
+      <div><span>Benicàssim</span><span class="mono">40.06°N</span></div>
+      <div><span>Lisbon</span><span class="mono">38.72°N</span></div>
+      <div><span>Porto</span><span class="mono">41.15°N</span></div>
+      <div><span>Santander</span><span class="mono">43.46°N</span></div>
+      <div><span>Burgos</span><span class="mono">42.34°N</span></div>
+      <div><span>Simancas</span><span class="mono">41.59°N</span></div>
+      <div><span>Peñafiel</span><span class="mono">41.60°N</span></div>
+    </div>
+    <ul class="links">
+      <li><span class="src">ERASMUS+ UVA BLOG · 22 SEP 2026</span><a href="https://erasmusplusuva.wordpress.com/2026/09/22/from-ahmedabad-to-valladolid-five-months-that-changed-my-life/" target="_blank" rel="noopener">From Ahmedabad to Valladolid</a><p>My full write-up for the University of Valladolid's Erasmus+ blog.</p></li>
+      <li><span class="src">INSTAGRAM REEL · 3,000+ LIKES</span><a href="https://www.instagram.com/reel/DYFkgg1qPqK/" target="_blank" rel="noopener">Teaching Spanish students garba</a></li>
+      <li><span class="src">YOUTUBE PLAYLIST</span><a href="https://www.youtube.com/@pranavdeora/playlists" target="_blank" rel="noopener">Spain Diaries 🇪🇸</a><p>18 short films from the semester.</p></li>
+    </ul>
+  </section>
+<section class="sec" id="t-press">
+    <span class="kicker">Press &amp; Media · broadcasting</span>
+    <h2>Where my story has been told</h2>
+    <ul class="links">
+      <li><span class="src">AHMEDABAD UNIVERSITY BLOG · 27 OCT 2025</span><a href="https://ahduni.edu.in/blog/how-a-chance-encounter-landed-me-an-internship-with-forbes-marshall/" target="_blank" rel="noopener">How a chance encounter landed me an internship with Forbes Marshall</a><p>Dr Naushad Forbes joined the student volunteers for dinner and asked about our dreams. That evening I decided where I would intern.</p></li>
+      <li><span class="src">ERASMUS+ UNIVERSIDAD DE VALLADOLID · 22 SEP 2026</span><a href="https://erasmusplusuva.wordpress.com/2026/09/22/from-ahmedabad-to-valladolid-five-months-that-changed-my-life/" target="_blank" rel="noopener">From Ahmedabad to Valladolid: five months that changed my life</a></li>
+      <li><span class="src">AU OFFICE OF INTERNATIONAL AFFAIRS · 13 SEP 2026</span><a href="https://www.instagram.com/p/DdbmZbhDuHu/" target="_blank" rel="noopener">Student testimonial: an Erasmus semester in Spain</a></li>
+      <li><span class="src">PODCAST · ESN VALLADOLID</span><a href="https://open.spotify.com/episode/6StbaM3r4bUZO9o5kpWnux" target="_blank" rel="noopener">Nation to Nation: India with Pranav</a><p>Listen on Spotify.</p></li>
+      <li><span class="src">CASTELLÓN DIARIO · 2 MAR 2026 · SPAIN</span><a href="https://castellondiario.com/jovenes-europeos-se-reunen-en-benicassim-para-frenar-los-discursos-de-odio-y-la-desinformacion-digital/" target="_blank" rel="noopener">Young Europeans gather in Benicàssim to stop hate speech and digital disinformation</a><p>Coverage of the Click for Change! youth exchange, in Spanish. The site may not open from India without a VPN.</p></li>
+    </ul>
+    <h3>My own channels</h3>
+    <div class="stats">
+      <div class="stat"><b>7,500+</b><span>LinkedIn followers · top post 30,800 impressions</span></div>
+      <div class="stat"><b>1,600+</b><span>Instagram followers · Lisbon reel 8,500 likes</span></div>
+      <div class="stat"><b>24K</b><span>views on my AU hostel tour, YouTube</span></div>
+      <a class="stat" href="https://open.spotify.com/playlist/7IKE44c8iwZeDiyoZvR7sd" target="_blank" rel="noopener" style="text-decoration:none"><b>On air ↗</b><span>RJ and Head of Management, Stepwell Radio · listen on Spotify</span></a>
+    </div>
+    <ul class="links">
+      <li><span class="src">LINKEDIN</span><a href="https://www.linkedin.com/in/pranav-deora/recent-activity/all/" target="_blank" rel="noopener">Semester reflections, Forbes Marshall wrap-up, Erasmus stories</a><p>I write a reflection at the end of every semester. The fourth-semester one reached 30,800 people.</p></li>
+      <li><span class="src">YOUTUBE · @PRANAVDEORA</span><a href="https://www.youtube.com/@pranavdeora" target="_blank" rel="noopener">Campus life, lectures, Spain Diaries</a><p>Including full lecture recordings like MAT 142 and Supply Chain Analytics for classmates.</p></li>
+      <li><span class="src">INSTAGRAM · @PRANAV_DEORA_</span><a href="https://www.instagram.com/pranav_deora_/" target="_blank" rel="noopener">Travel, Erasmus nights, Ahmedabad rains</a></li>
+    </ul>
+  </section>
+<section class="sec" id="t-contact">
+    <span class="kicker">The Lighthouse · signal me</span>
+    <h2>Send a signal</h2>
+    <p>The lighthouse keeps its light on. I'm happy to talk about supply chains, international trade, Erasmus+, or Shazlo.</p>
+    <div class="copyrow"><code>pranavdeora@gmail.com</code><button class="btn" type="button" data-copy="pranavdeora@gmail.com">Copy email</button></div>
+    <ul class="links">
+      <li><span class="src">LINKEDIN</span><a href="https://www.linkedin.com/in/pranav-deora" target="_blank" rel="noopener">linkedin.com/in/pranav-deora</a></li>
+      <li><span class="src">INSTAGRAM</span><a href="https://www.instagram.com/pranav_deora_/" target="_blank" rel="noopener">@pranav_deora_</a></li>
+      <li><span class="src">YOUTUBE</span><a href="https://www.youtube.com/@pranavdeora" target="_blank" rel="noopener">@pranavdeora</a></li>
+      <li><span class="src">SHAZLO</span><a href="https://shazlo.store" target="_blank" rel="noopener">shazlo.store</a></li>
+    </ul>
+    <p class="note">Home port: Ahmedabad, India · 23.03°N 72.58°E · IST (UTC+5:30)</p>
+  </section>
+</main>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+/* ============================================================
+   CONTENT & UI
+   ============================================================ */
+const ISLANDS = {
+  about:   {name:'Home Port',     pos:[-46,-18],  r:11, coords:'23.03°N 72.58°E · AHMEDABAD'},
+  shazlo:  {name:'Shazlo',        pos:[44,-30],   r:10, coords:'SHAZLO.STORE · AHMEDABAD'},
+  voyage:  {name:'Voyage Log',    pos:[-18,-78],  r:12, coords:'18.76°N 73.86°E · CHAKAN, PUNE'},
+  erasmus: {name:'Erasmus',       pos:[62,-92],   r:12, coords:'41.65°N 4.72°W · VALLADOLID'},
+  press:   {name:'Press & Media', pos:[-72,-104], r:10, coords:'ON AIR · STEPWELL RADIO'},
+  contact: {name:'Lighthouse',    pos:[12,-140],  r:9,  coords:'SIGNAL · PRANAVDEORA@GMAIL.COM'},
+};
+const ORDER = ['about','shazlo','voyage','erasmus','press','contact'];
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const $ = s => document.querySelector(s);
+const panel = $('#panel'), panelBody = $('#panelBody');
+
+const DEMO = [
+  ['Indigo block-print shirt','Hand-printed · small label, Jaipur','linear-gradient(160deg,#27466b,#1b2b44 60%,#c79a4b)'],
+  ['Upcycled denim tote','Zero-waste studio · Ahmedabad','linear-gradient(160deg,#5a7fa3,#2c3e57)'],
+  ['Kalamkari kurta','Artisan collective · Andhra Pradesh','linear-gradient(160deg,#8a3b2b,#3b1f1a 70%,#d8a657)'],
+  ['Linen co-ord set','Slow-fashion label · Bengaluru','linear-gradient(160deg,#c9b99a,#7d6c55)'],
+  ['Bandhani dupatta','Family workshop · Kutch','linear-gradient(160deg,#b8324a,#5a1a2a 65%,#f2c14e)'],
+];
+function initSwipe(box){
+  let i=0;
+  const sec = box.closest('.sec');
+  function render(){
+    box.innerHTML='';
+    for(let k=i+2;k>=i;k--){
+      const d=DEMO[k%DEMO.length], c=document.createElement('div');
+      c.className='card'; c.style.background=d[2];
+      const depth=k-i; c.style.transform=`translateY(${depth*10}px) scale(${1-depth*.04})`; c.style.opacity= depth>1?.6:1;
+      c.innerHTML=`<span class="tag">DEMO</span><b>${d[0]}</b><span>${d[1]}</span>`;
+      box.appendChild(c);
+    }
+    const top=box.lastElementChild;
+    let sx=0,dx=0,drag=false;
+    top.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;top.setPointerCapture(e.pointerId);top.style.transition='none';});
+    top.addEventListener('pointermove',e=>{if(!drag)return;dx=e.clientX-sx;top.style.transform=`translateX(${dx}px) rotate(${dx/14}deg)`;});
+    top.addEventListener('pointerup',()=>{drag=false;top.style.transition='';if(Math.abs(dx)>80)fling(dx>0);else top.style.transform='';dx=0;});
+  }
+  const counts={like:0,closet:0,bag:0}, countEl=sec.querySelector('.swipe-count');
+  const MOVES={pass:'translateX(-360px) rotate(-24deg)', like:'translateX(360px) rotate(24deg)', closet:'translateY(-320px) scale(.6)', bag:'translateY(320px) scale(.6)'};
+  function act(kind){
+    const top=box.lastElementChild; if(!top) return;
+    top.style.transform=MOVES[kind]; top.style.opacity=0;
+    if(counts[kind]!==undefined){ counts[kind]++; countEl.textContent=`Liked ${counts.like} · Closet ${counts.closet} · Bag ${counts.bag}`; }
+    setTimeout(()=>{ i=(i+1)%DEMO.length; render(); },300);
+  }
+  const fling=right=>act(right?'like':'pass');
+  sec.querySelectorAll('[data-act]').forEach(b=>b.onclick=()=>act(b.dataset.act));
+  render();
+}
+
+function fillContent(root){
+  root.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{
+    try{ await navigator.clipboard.writeText(b.dataset.copy); b.textContent='Copied'; }
+    catch(e){ b.textContent='Select the address to copy'; }
+    setTimeout(()=>b.textContent='Copy email',2200);
+  }));
+  root.querySelectorAll('[data-swipe]').forEach(initSwipe);
+}
+function openPanel(key){
+  panelBody.innerHTML='';
+  const sec=$('#t-'+key).cloneNode(true); sec.removeAttribute('id'); panelBody.appendChild(sec);
+  fillContent(panelBody);
+  $('#panelCoords').textContent = 'DOCKED · ' + ISLANDS[key].coords;
+  panel.classList.add('open');
+  panelBody.scrollTop=0;
+  document.querySelectorAll('#nav button[data-go], #mnav button[data-go]').forEach(b=>b.setAttribute('aria-current', b.dataset.go===key?'true':'false'));
+  try{ history.replaceState(null,'','#'+key); }catch(e){}
+}
+function closePanel(){
+  panel.classList.remove('open');
+  try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){}
+}
+$('#panelClose').addEventListener('click', closePanel);
+
+/* text version (same content as the islands) */
+const tlMain = $('#tlMain');
+fillContent(tlMain);
+function openText(){ $('#textlog').classList.add('open'); hideIntro(); }
+function closeText(){ $('#textlog').classList.remove('open'); }
+function hideIntro(){ $('#intro').classList.add('gone'); }
+$('#btnLog').addEventListener('click', openText);
+$('#readLog').addEventListener('click', openText);
+$('#backToSea').addEventListener('click', closeText);
+$('#sailSound').addEventListener('click',()=>{ Sound.set(true); hideIntro(); setTimeout(()=>window.__sailTo&&window.__sailTo('about'),700); });
+$('#sailQuiet').addEventListener('click',()=>{ hideIntro(); setTimeout(()=>window.__sailTo&&window.__sailTo('about'),700); });
+
+
+/* ============================================================
+   AUDIO — synthesized sea (no files)
+   ============================================================ */
+const Sound = {
+  el:null, ctx:null, master:null, on:false, fadeT:null,
+  buildLoop(){
+    // 12-second seamless sea loop: brown noise shaped into slow swells, plus a little foam hiss
+    const sr=22050, secs=12, n=sr*secs, F=sr; const tot=n+F; const d=new Float32Array(tot);
+    let b=0, lp=0, prevW=0, hp=0;
+    for(let i=0;i<tot;i++){
+      const t=i/sr, w=Math.random()*2-1;
+      b=(b+0.02*w)/1.02; lp+=(b-lp)*0.25;
+      hp=0.97*(hp+w-prevW); prevW=w;
+      const sw=0.5+0.5*Math.sin(2*Math.PI*t*2/secs-Math.PI/2), sw2=0.5+0.5*Math.sin(2*Math.PI*t*3/secs+1.3);
+      const env=0.25+0.75*Math.pow(sw,1.6)*(0.65+0.35*sw2);
+      d[i]=lp*3.4*env + hp*0.035*Math.pow(env,3);
+    }
+    for(let i=0;i<F;i++){ const k=i/F; d[i]=d[i]*k+d[n+i]*(1-k); }
+    let peak=0; for(let i=0;i<n;i++) peak=Math.max(peak,Math.abs(d[i]));
+    const g=0.85/(peak||1);
+    const buf=new ArrayBuffer(44+n*2), v=new DataView(buf);
+    const str=(o,x)=>{for(let i=0;i<x.length;i++) v.setUint8(o+i,x.charCodeAt(i));};
+    str(0,'RIFF'); v.setUint32(4,36+n*2,true); str(8,'WAVE'); str(12,'fmt '); v.setUint32(16,16,true); v.setUint16(20,1,true); v.setUint16(22,1,true);
+    v.setUint32(24,sr,true); v.setUint32(28,sr*2,true); v.setUint16(32,2,true); v.setUint16(34,16,true); str(36,'data'); v.setUint32(40,n*2,true);
+    for(let i=0;i<n;i++) v.setInt16(44+i*2, Math.max(-1,Math.min(1,d[i]*g))*32767, true);
+    return URL.createObjectURL(new Blob([buf],{type:'audio/wav'}));
+  },
+  ensure(){
+    if(!this.el){ this.el=new Audio(this.buildLoop()); this.el.loop=true; this.el.volume=0; }
+    if(!this.ctx){ try{ const AC=window.AudioContext||window.webkitAudioContext; this.ctx=new AC(); this.master=this.ctx.createGain(); this.master.gain.value=.6; this.master.connect(this.ctx.destination); }catch(e){} }
+    if(this.ctx&&this.ctx.state==='suspended') this.ctx.resume().catch(()=>{});
+  },
+  ui(on){
+    const b=$('#btnSound'); b.setAttribute('aria-pressed',on); b.setAttribute('aria-label',on?'Sound is on. Turn sea sound off':'Sound is off. Turn sea sound on');
+    b.innerHTML = on
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>';
+  },
+  fade(to,done){
+    clearInterval(this.fadeT); const el=this.el;
+    this.fadeT=setInterval(()=>{ const v=el.volume+(to-el.volume)*0.15; if(Math.abs(to-v)<0.01){ el.volume=to; clearInterval(this.fadeT); done&&done(); } else el.volume=Math.max(0,Math.min(1,v)); },60);
+  },
+  set(on){
+    this.ensure(); this.on=on; this.ui(on);
+    if(on){
+      const p=this.el.play();
+      if(p&&p.catch) p.catch(()=>{ const h=$('#hint'); h.textContent='Sound is on, but this browser window is blocking audio. Open the site in Chrome or tap anywhere to try again.'; });
+      this.fade(0.85);
+    } else this.fade(0,()=>this.el.pause());
+  },
+  tone(fr,v,start,dur){
+    const ctx=this.ctx, o=ctx.createOscillator(), g=ctx.createGain(); o.type='sine'; o.frequency.value=fr;
+    g.gain.setValueAtTime(0,start); g.gain.linearRampToValueAtTime(v,start+0.01); g.gain.exponentialRampToValueAtTime(0.0001,start+dur);
+    o.connect(g); g.connect(this.master); o.start(start); o.stop(start+dur+.05);
+  },
+  bell(){
+    if(!this.on||!this.ctx) return; const t=this.ctx.currentTime;
+    [[784,.25],[1568,.09],[2350,.05]].forEach(([f,v])=>{ this.tone(f,v,t,2.4); this.tone(f,v*.7,t+.35,2.4); });
+  },
+  horn(){
+    if(!this.on||!this.ctx) return;
+    const ctx=this.ctx, t=ctx.currentTime;
+    const o=ctx.createOscillator(), o2=ctx.createOscillator(), f=ctx.createBiquadFilter(), g=ctx.createGain();
+    o.type='sawtooth'; o.frequency.value=87; o2.type='sawtooth'; o2.frequency.value=87.6; f.type='lowpass'; f.frequency.value=320;
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(0.09,t+0.6); g.gain.setValueAtTime(0.09,t+2.4); g.gain.linearRampToValueAtTime(0,t+3.4);
+    o.connect(f); o2.connect(f); f.connect(g); g.connect(this.master); o.start(t); o2.start(t); o.stop(t+3.5); o2.stop(t+3.5);
+  }
+};
+$('#btnSound').addEventListener('click',()=>Sound.set(!Sound.on));
+// if the browser blocked the first attempt, try again on the next tap anywhere
+addEventListener('pointerdown',()=>{ if(Sound.on&&Sound.el&&Sound.el.paused){ const p=Sound.el.play(); if(p&&p.catch) p.catch(()=>{}); } },true);
+
+/* ============================================================
+   SCENE
+   ============================================================ */
+const canvas = $('#scene');
+let renderer;
+try{
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'});
+}catch(e){
+  $('#sailSound').onclick=$('#sailQuiet').onclick=openText; openText(); throw e;
+}
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(52, 1, 0.5, 1400);
+scene.fog = new THREE.Fog(0x0b1a2b, 90, 460);
+
+/* day / night palettes */
+const PAL = {
+  day:   {zenith:0x2f6fae, horizon:0xbcd8e6, fog:0xb4cfdc, deep:0x0b3a5a, shallow:0x1d7891, sun:0xfff1d6, sunInt:1.0, hemiSky:0xdfefff, hemiGround:0x24452f, hemiInt:1.0, dirInt:2.4, exposure:0.95},
+  night: {zenith:0x030a17, horizon:0x14304a, fog:0x0d2236, deep:0x020b16, shallow:0x0a2b44, sun:0xcfe0ff, sunInt:0.55, hemiSky:0x3a5b86, hemiGround:0x05090f, hemiInt:0.45, dirInt:0.55, exposure:1.05},
+};
+const cA=new THREE.Color(), cB=new THREE.Color();
+const mixHex=(a,b,t,out)=>out.copy(cA.set(a)).lerp(cB.set(b),t);
+
+/* waves (shared by GPU and CPU) */
+const WAVES = [
+  {d:[1,0.35],  a:0.55, len:34, sp:1.05},
+  {d:[-0.4,1],  a:0.35, len:21, sp:1.25},
+  {d:[0.8,-0.6],a:0.22, len:12, sp:1.6},
+  {d:[-1,-0.2], a:0.12, len:7,  sp:2.1},
+].map(w=>{const l=Math.hypot(w.d[0],w.d[1]); return {dx:w.d[0]/l, dz:w.d[1]/l, a:w.a, k:2*Math.PI/w.len, s:w.sp};});
+const AMP_SUM = WAVES.reduce((s,w)=>s+w.a,0);
+function waveH(x,z,t){ let h=0; for(const w of WAVES){ h+=w.a*Math.sin(w.k*(w.dx*x+w.dz*z)+t*w.s); } return h; }
+
+/* sky dome */
+const skyU = { uZenith:{value:new THREE.Color()}, uHorizon:{value:new THREE.Color()}, uSunDir:{value:new THREE.Vector3()}, uSunCol:{value:new THREE.Color()}, uNight:{value:1}, uTime:{value:0} };
+const sky = new THREE.Mesh(new THREE.SphereGeometry(1000,32,16), new THREE.ShaderMaterial({
+  uniforms:skyU, side:THREE.BackSide, depthWrite:false, fog:false,
+  vertexShader:`varying vec3 vDir; void main(){ vDir=normalize(position); vec4 p=modelViewMatrix*vec4(position,1.); gl_Position=projectionMatrix*p; }`,
+  fragmentShader:`
+    uniform vec3 uZenith,uHorizon,uSunDir,uSunCol; uniform float uNight,uTime; varying vec3 vDir;
+    float hash(vec3 p){ p=fract(p*0.3183099+.1); p*=17.0; return fract(p.x*p.y*p.z*(p.x+p.y+p.z)); }
+    void main(){
+      vec3 d=normalize(vDir); float y=max(d.y,0.);
+      vec3 col=mix(uHorizon,uZenith,pow(y,0.55));
+      float s=max(dot(d,normalize(uSunDir)),0.);
+      col+=uSunCol*(pow(s,8.)*0.18*(1.-uNight*0.6)+pow(s,64.)*0.35);
+      float disc=smoothstep(0.9993,0.9997,s);
+      col=mix(col,uSunCol*(1.6-uNight*0.4),disc);
+      // stars
+      vec3 g=floor(d*260.);
+      float st=step(0.9975,hash(g))*smoothstep(0.05,0.35,y);
+      float tw=0.6+0.4*sin(uTime*2.+hash(g+3.)*40.);
+      col+=vec3(st*tw*uNight);
+      if(d.y<0.) col=uHorizon;
+      gl_FragColor=vec4(col,1.);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+    }`
+}));
+sky.renderOrder=-1;
+scene.add(sky);
+
+/* water */
+const waterU = {
+  uTime:{value:0}, uDeep:{value:new THREE.Color()}, uShallow:{value:new THREE.Color()},
+  uSky:{value:new THREE.Color()}, uHorizon:{value:new THREE.Color()}, uSunDir:{value:new THREE.Vector3()}, uSunCol:{value:new THREE.Color()},
+  uFogCol:{value:new THREE.Color()}, uFogNear:{value:90}, uFogFar:{value:460}, uNight:{value:1},
+  uW:{value:WAVES.map(w=>new THREE.Vector4(w.dx,w.dz,w.a,w.k))}, uS:{value:WAVES.map(w=>w.s)}, uAmp:{value:AMP_SUM},
+};
+const waterGeo = new THREE.PlaneGeometry(900,900,300,300); waterGeo.rotateX(-Math.PI/2);
+const water = new THREE.Mesh(waterGeo, new THREE.ShaderMaterial({
+  uniforms:waterU,
+  vertexShader:`
+    uniform float uTime; uniform vec4 uW[4]; uniform float uS[4];
+    varying vec3 vWorld; varying vec3 vN; varying float vH;
+    void main(){
+      vec4 wp=modelMatrix*vec4(position,1.);
+      float h=0.,dx=0.,dz=0.;
+      for(int i=0;i<4;i++){ vec4 w=uW[i]; float f=w.w*(w.x*wp.x+w.y*wp.z)+uTime*uS[i]; h+=w.z*sin(f); float c=w.z*w.w*cos(f); dx+=c*w.x; dz+=c*w.y; }
+      wp.y+=h; vH=h; vN=normalize(vec3(-dx,1.,-dz)); vWorld=wp.xyz;
+      gl_Position=projectionMatrix*viewMatrix*wp;
+    }`,
+  fragmentShader:`
+    uniform vec3 uDeep,uShallow,uSky,uHorizon,uSunDir,uSunCol,uFogCol; uniform float uFogNear,uFogFar,uTime,uNight,uAmp;
+    varying vec3 vWorld; varying vec3 vN; varying float vH;
+    void main(){
+      vec3 N=vN;
+      // fine ripples for sparkle
+      vec2 p=vWorld.xz;
+      N.x+=0.018*sin(p.x*4.1+uTime*2.3)+0.012*sin(p.y*5.3-uTime*1.9+p.x*1.7);
+      N.z+=0.018*cos(p.y*4.6+uTime*2.1)+0.012*cos(p.x*6.2+uTime*1.7);
+      N=normalize(N);
+      vec3 V=normalize(cameraPosition-vWorld);
+      float fres=0.03+0.97*pow(1.-max(dot(N,V),0.),5.);
+      vec3 R=reflect(-V,N);
+      vec3 skyRef=mix(uHorizon,uSky,pow(max(R.y,0.),0.6));
+      float k=clamp(vH/uAmp*0.5+0.5,0.,1.);
+      vec3 base=mix(uDeep,uShallow,k*0.9);
+      vec3 col=mix(base,skyRef,clamp(fres,0.,0.85));
+      vec3 L=normalize(uSunDir);
+      float spec=pow(max(dot(R,L),0.),420.)*(2.2-uNight*0.9)+pow(max(dot(R,L),0.),40.)*0.06;
+      col+=uSunCol*spec;
+      float foam=smoothstep(0.62,0.92,k);
+      col=mix(col,vec3(0.85,0.92,0.95)*(1.-uNight*0.6),foam*0.28);
+      float d=length(cameraPosition-vWorld);
+      col=mix(col,uFogCol,smoothstep(uFogNear,uFogFar,d));
+      gl_FragColor=vec4(col,1.);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+    }`
+}));
+water.position.set(0,0,-70);
+scene.add(water);
+
+/* lights */
+const hemi = new THREE.HemisphereLight(0xffffff,0x223322,1); scene.add(hemi);
+const sun = new THREE.DirectionalLight(0xffffff,2); scene.add(sun); scene.add(sun.target);
+const SUN_DAY = new THREE.Vector3(0.45,0.38,-0.8).normalize();
+const MOON = new THREE.Vector3(-0.35,0.42,-0.84).normalize();
+
+/* ---------- materials ---------- */
+const M = (c,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c, roughness:.85, metalness:0, flatShading:true},o));
+const mat = {
+  sand:M(0xd8c08f), sandDark:M(0xb39a6b), grass:M(0x3f7d3a), grass2:M(0x2f6a35), rock:M(0x6b7075), rockDark:M(0x4a4f55),
+  wood:M(0x7a4e2d), woodDark:M(0x4b2f1c), hull:M(0x2b1a12), stripe:M(0xe8e1d0), deck:M(0x9a6a3f),
+  sail:new THREE.MeshStandardMaterial({color:0xf3eadb, roughness:.9, side:THREE.DoubleSide, flatShading:false}),
+  white:M(0xf1efe8), red:M(0xc8372d), roof:M(0xc0602f), blue:M(0x1f4f8f), palm:M(0x2f7d3b), palmDark:M(0x24622e),
+  win:new THREE.MeshStandardMaterial({color:0x332211, emissive:0xffb35c, emissiveIntensity:1.6}),
+  lamp:new THREE.MeshStandardMaterial({color:0xfff3d0, emissive:0xffd27a, emissiveIntensity:3}),
+  red_light:new THREE.MeshStandardMaterial({color:0x330000, emissive:0xff3b2f, emissiveIntensity:2}),
+};
+const C = {
+  orange:M(0xd9622b), teal:M(0x1f8a8a), navy:M(0x2a4f7a), maroon:M(0x8e2f35), mustard:M(0xd2a23a), grey:M(0x8d959c),
+};
+
+const add=(parent,geo,m,x=0,y=0,z=0,rx=0,ry=0,rz=0)=>{const o=new THREE.Mesh(geo,m); o.position.set(x,y,z); o.rotation.set(rx,ry,rz); parent.add(o); return o;};
+
+function palm(parent,x,z,h=6,lean=0.25,rot=0){
+  const g=new THREE.Group(); g.position.set(x,1.2,z); g.rotation.y=rot; parent.add(g);
+  let px=0,py=0;
+  for(let i=0;i<5;i++){ const s=add(g,new THREE.CylinderGeometry(.22-i*.02,.28-i*.02,h/5+.05,6),mat.wood,px,py+h/10,0,0,0,-lean*i*.25); px+=Math.sin(lean*i*.25)*h/5; py+=h/5; }
+  const top=new THREE.Group(); top.position.set(px,py,0); g.add(top);
+  for(let i=0;i<7;i++){
+    const leaf=add(top,new THREE.ConeGeometry(.55,3.6,4),i%2?mat.palm:mat.palmDark,0,0,0);
+    leaf.scale.set(1,1,.25); leaf.rotation.set(0,i/7*Math.PI*2,1.15); leaf.position.set(Math.cos(i/7*Math.PI*2)*1.4,-.4,-Math.sin(i/7*Math.PI*2)*1.4);
+    leaf.rotateZ(.0);
+  }
+  add(top,new THREE.SphereGeometry(.35,6,5),mat.woodDark,0,-.2,0);
+  return g;
+}
+function hut(parent,x,z,ry=0,s=1,roofM=mat.roof){
+  const g=new THREE.Group(); g.position.set(x,1.2,z); g.rotation.y=ry; g.scale.setScalar(s); parent.add(g);
+  add(g,new THREE.BoxGeometry(4,2.6,3.2),mat.white,0,1.3,0);
+  const roof=add(g,new THREE.ConeGeometry(3.4,2,4),roofM,0,3.6,0,0,Math.PI/4,0); roof.scale.set(1,1,.85);
+  add(g,new THREE.BoxGeometry(.8,.8,.1),mat.win,-.9,1.5,1.62); add(g,new THREE.BoxGeometry(.8,.8,.1),mat.win,.9,1.5,1.62);
+  add(g,new THREE.BoxGeometry(.9,1.5,.1),mat.woodDark,0,.75,-1.62);
+  return g;
+}
+function pier(parent,dir,r){
+  const g=new THREE.Group(); parent.add(g);
+  const ang=Math.atan2(dir.x,dir.z); g.rotation.y=ang;
+  const L=8; add(g,new THREE.BoxGeometry(2.4,.25,L),mat.deck,0,1.05,r-1+L/2);
+  for(let i=0;i<4;i++){ add(g,new THREE.CylinderGeometry(.16,.16,3,6),mat.woodDark,-1.1,0,r+i*2.2); add(g,new THREE.CylinderGeometry(.16,.16,3,6),mat.woodDark,1.1,0,r+i*2.2); }
+  const lp=add(g,new THREE.CylinderGeometry(.08,.08,2.2,6),mat.woodDark,1,2.2,r+L-1.2);
+  add(g,new THREE.SphereGeometry(.22,8,6),mat.lamp,1,3.4,r+L-1.2);
+  return g;
+}
+
+/* ---------- islands ---------- */
+const islandGroups=[]; const lampMats=[mat.win, mat.lamp];
+const CENTER=new THREE.Vector2(0,-60);
+function baseIsland(key){
+  const I=ISLANDS[key]; const g=new THREE.Group(); g.position.set(I.pos[0],0,I.pos[1]); g.userData.key=key; scene.add(g);
+  const r=I.r;
+  add(g,new THREE.CylinderGeometry(r*1.02,r*1.35,3,22),mat.sand,0,-.3,0);
+  const grass=add(g,new THREE.SphereGeometry(r*.82,18,10,0,Math.PI*2,0,Math.PI/2),mat.grass,0,1.1,0); grass.scale.y=.32;
+  for(let i=0;i<6;i++){ const a=i/6*Math.PI*2+key.length; add(g,new THREE.DodecahedronGeometry(.8+Math.random()*1.2,0),i%2?mat.rock:mat.rockDark,Math.cos(a)*r*1.18,.2,Math.sin(a)*r*1.18,Math.random(),Math.random(),0); }
+  // dock faces the open water toward the sea centre / start
+  const dir=new THREE.Vector3(CENTER.x-I.pos[0]+ (key==='contact'?0:0), 0, (key==='about'||key==='shazlo')?40:(CENTER.y-I.pos[1])).normalize();
+  if(key==='about'||key==='shazlo'){ dir.set(-I.pos[0]*.25,0,1).normalize(); }
+  pier(g,dir,r);
+  const side=new THREE.Vector3(-dir.z,0,dir.x), base=new THREE.Vector3(I.pos[0],0,I.pos[1]);
+  I.dir=dir.clone(); I.side=side;
+  I.dock=base.clone().addScaledVector(dir,r+9.5).addScaledVector(side,3.9);        // ship lies alongside the pier
+  I.approach=base.clone().addScaledVector(dir,r+24).addScaledVector(side,3.9);     // lines up before coming in
+  I.dockHeading=Math.atan2(-dir.x,-dir.z);                                          // bow pointing at the island
+  const gy=d=>1.1+0.32*r*.82*Math.sqrt(Math.max(0,1-Math.pow(d/(r*.82),2)));
+  I.walk=[ base.clone().addScaledVector(dir,r+6.3).setY(1.2), base.clone().addScaledVector(dir,r-1.2).setY(1.2),
+           base.clone().addScaledVector(dir,r*(key==='contact'?.55:.4)).setY(gy(r*(key==='contact'?.55:.4))) ];
+  I.labelY = 9;
+  islandGroups.push(g);
+  return {g,r,dir};
+}
+// helpers: canvas textures, signboards
+function canvasTex(w,h,draw){ const c=document.createElement('canvas'); c.width=w; c.height=h; draw(c.getContext('2d'),w,h); const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=4; return t; }
+function star(ctx,cx,cy,ro,ri){ ctx.beginPath(); for(let i=0;i<10;i++){ const a=-Math.PI/2+i*Math.PI/5, rr=i%2?ri:ro; ctx.lineTo(cx+Math.cos(a)*rr, cy+Math.sin(a)*rr); } ctx.closePath(); ctx.fill(); }
+const gold=new THREE.MeshStandardMaterial({color:0xd8a62b, metalness:.75, roughness:.3});
+const dark=M(0x1d2228);
+function signboard(key,g,r,dir){
+  const side=new THREE.Vector3(-dir.z,0,dir.x);
+  const s=new THREE.Group(); s.position.copy(dir).multiplyScalar(r-.3).addScaledVector(side,-2.6); s.position.y=1.1;
+  s.rotation.y=Math.atan2(dir.x,dir.z); g.add(s);
+  const t=canvasTex(512,128,(c,w,h)=>{ c.fillStyle='#5b3a22'; c.fillRect(0,0,w,h); c.strokeStyle='#3a2414'; c.lineWidth=10; c.strokeRect(5,5,w-10,h-10);
+    c.fillStyle='#f6ead2'; c.font='bold 62px Georgia, serif'; c.textAlign='center'; c.textBaseline='middle'; c.fillText(ISLANDS[key].name,w/2,h/2+4); });
+  add(s,new THREE.PlaneGeometry(4,1),new THREE.MeshStandardMaterial({map:t,roughness:.9,side:THREE.DoubleSide}),0,2,0);
+  add(s,new THREE.BoxGeometry(.18,2.2,.18),mat.woodDark,-1.7,1,-.05); add(s,new THREE.BoxGeometry(.18,2.2,.18),mat.woodDark,1.7,1,-.05);
+}
+
+// Home Port · about me, education, honours: house, graduation cap, trophy
+{ const {g,r,dir}=baseIsland('about'); signboard('about',g,r,dir);
+  hut(g,-3,-3,.4,1.25); palm(g,5,-5,7,.3,1); palm(g,-7,3,6,.35,2.5);
+  const cap=new THREE.Group(); cap.position.set(2.5,1.2,2.2); g.add(cap);
+  add(cap,new THREE.BoxGeometry(1.8,1.6,1.8),mat.white,0,.8,0);
+  add(cap,new THREE.CylinderGeometry(.75,.85,.7,16),dark,0,1.95,0);
+  add(cap,new THREE.BoxGeometry(2.8,.14,2.8),dark,0,2.35,0,0,Math.PI/4,0);
+  add(cap,new THREE.SphereGeometry(.14,8,6),gold,0,2.47,0);
+  add(cap,new THREE.CylinderGeometry(.03,.03,1.1,4),gold,1.3,1.9,0);
+  add(cap,new THREE.ConeGeometry(.12,.35,6),gold,1.3,1.25,0,Math.PI,0,0);
+  const tr=new THREE.Group(); tr.position.set(-2.5,1.2,3.6); g.add(tr);
+  add(tr,new THREE.BoxGeometry(1.2,1,1.2),mat.rockDark,0,.5,0);
+  const pts=[[0,0],[.45,0],[.45,.1],[.15,.2],[.12,.7],[.55,1.1],[.6,1.7],[.5,1.75]].map(([x,y])=>new THREE.Vector2(x,y));
+  add(tr,new THREE.LatheGeometry(pts,20),gold,0,1,0);
+  add(tr,new THREE.TorusGeometry(.32,.06,6,12,Math.PI),gold,.6,2.3,0,0,0,-Math.PI/2);
+  add(tr,new THREE.TorusGeometry(.32,.06,6,12,Math.PI),gold,-.6,2.3,0,0,0,Math.PI/2);
+  const fire=add(g,new THREE.ConeGeometry(.5,1,6),mat.lamp,5.5,1.9,2); fire.userData.flicker=true; }
+
+// Shazlo · fashion app: a giant phone with a swipe card, clothes rack, market stall
+{ const {g,r,dir}=baseIsland('shazlo'); signboard('shazlo',g,r,dir);
+  const ph=new THREE.Group(); ph.position.set(0,1.2,-1); ph.rotation.y=Math.atan2(dir.x,dir.z); g.add(ph);
+  add(ph,new THREE.BoxGeometry(3,5.6,.35),dark,0,3.4,0);
+  const scr=canvasTex(300,560,(c,w,h)=>{ const gr=c.createLinearGradient(0,0,0,h); gr.addColorStop(0,'#f7efe3'); gr.addColorStop(1,'#efe1cf'); c.fillStyle=gr; c.fillRect(0,0,w,h);
+    c.fillStyle='#1a1a1a'; c.font='bold 40px Georgia, serif'; c.textAlign='center'; c.fillText('Shazlo',w/2,62);
+    c.save(); c.translate(w/2,270); c.rotate(-.12); const cg=c.createLinearGradient(-100,-140,100,140); cg.addColorStop(0,'#27466b'); cg.addColorStop(.6,'#1b2b44'); cg.addColorStop(1,'#c79a4b'); c.fillStyle=cg;
+    c.beginPath(); c.roundRect(-100,-140,200,280,22); c.fill(); c.fillStyle='#fff'; c.font='bold 22px sans-serif'; c.fillText('Block-print shirt',0,100); c.restore();
+    c.font='bold 54px sans-serif'; c.fillStyle='#c8372d'; c.fillText('✕',w*0.28,500); c.fillStyle='#e0475e'; c.fillText('♥',w*0.72,500); });
+  add(ph,new THREE.PlaneGeometry(2.6,5.1),new THREE.MeshStandardMaterial({map:scr,emissive:0xffffff,emissiveMap:scr,emissiveIntensity:.35,roughness:.5}),0,3.4,.18);
+  const rack=new THREE.Group(); rack.position.set(4,1.2,1.5); rack.rotation.y=-.6; g.add(rack);
+  add(rack,new THREE.CylinderGeometry(.06,.06,2.6,6),mat.white,-1.6,1.3,0); add(rack,new THREE.CylinderGeometry(.06,.06,2.6,6),mat.white,1.6,1.3,0);
+  add(rack,new THREE.CylinderGeometry(.05,.05,3.3,6),mat.white,0,2.55,0,0,0,Math.PI/2);
+  [[C.maroon,-1.1],[C.mustard,-.4],[C.teal,.3],[C.navy,1]].forEach(([m,x])=>{ add(rack,new THREE.BoxGeometry(.6,1.3,.08),m,x,1.8,0); add(rack,new THREE.TorusGeometry(.12,.02,4,8,Math.PI),mat.white,x,2.5,0); });
+  const st=new THREE.Group(); st.position.set(-4.2,1.2,1.2); st.rotation.y=.6; g.add(st);
+  add(st,new THREE.BoxGeometry(3.2,1.2,1.8),mat.wood,0,.6,0);
+  [C.maroon,mat.white,C.mustard,mat.white].forEach((m,i)=>add(st,new THREE.BoxGeometry(.8,.12,2.4),m,-1.2+i*.8,2.7,0,.25,0,0));
+  [-1.5,1.5].forEach(x=>add(st,new THREE.CylinderGeometry(.08,.08,2.7,6),mat.woodDark,x,1.35,.9));
+  palm(g,-5,-4,6,.3,1);
+}
+
+// Voyage Log · experience: container yard and crane, the supply chain island
+{ const {g,r,dir}=baseIsland('voyage'); signboard('voyage',g,r,dir);
+  const box=new THREE.BoxGeometry(4.2,1.7,1.8); const ms=[C.orange,C.navy,C.teal,C.maroon,C.mustard,C.grey];
+  let n=0; for(let lx=0;lx<2;lx++) for(let lz=0;lz<3;lz++){ const h=1+((lx*3+lz)%3); for(let y=0;y<h;y++){ add(g,box,ms[(n++)%ms.length],-3+lx*4.4,1.2+.85+y*1.72,-3+lz*1.95); } }
+  const cr=new THREE.Group(); cr.position.set(5,1.2,2); g.add(cr);
+  add(cr,new THREE.BoxGeometry(.5,9,.5),C.mustard,0,4.5,0);
+  add(cr,new THREE.BoxGeometry(9,.45,.45),C.mustard,-2.5,9,0);
+  add(cr,new THREE.CylinderGeometry(.04,.04,4,4),mat.rockDark,-6,7,0);
+  add(cr,new THREE.BoxGeometry(2.2,.9,1),C.orange,-6,4.6,0);
+  add(cr,new THREE.SphereGeometry(.25,8,6),mat.red_light,0,9.5,0);
+  for(let i=0;i<3;i++) add(g,new THREE.BoxGeometry(1.4,.2,1.4),mat.deck,-6.5,1.3+i*.24,3.5);
+}
+
+// Erasmus · Spain: whitewashed houses, a La Mancha windmill and the EU flag
+let windmill;
+{ const {g,r,dir}=baseIsland('erasmus'); signboard('erasmus',g,r,dir);
+  hut(g,-2,-3,.8,1.2,mat.roof); hut(g,3,-5,-.3,.85,mat.roof);
+  const wm=new THREE.Group(); wm.position.set(-4.5,1.2,2.5); g.add(wm);
+  add(wm,new THREE.CylinderGeometry(1,1.3,4.6,12),mat.white,0,2.3,0);
+  add(wm,new THREE.ConeGeometry(1.25,1.4,12),dark,0,5.3,0);
+  windmill=new THREE.Group(); windmill.position.set(0,4.7,1.3); wm.add(windmill);
+  for(let i=0;i<4;i++){ const b=new THREE.Group(); b.rotation.z=i*Math.PI/2; windmill.add(b); add(b,new THREE.BoxGeometry(.12,3.6,.08),mat.woodDark,0,1.8,0); add(b,new THREE.BoxGeometry(.7,2.6,.04),mat.white,.38,2.1,0); }
+  add(g,new THREE.CylinderGeometry(.08,.08,7,6),mat.white,4.5,4.6,2.5);
+  const eu=canvasTex(600,400,(c,w,h)=>{ c.fillStyle='#003399'; c.fillRect(0,0,w,h); c.fillStyle='#FFCC00'; for(let i=0;i<12;i++){ const a=i/12*Math.PI*2; star(c,w/2+Math.cos(a)*h/3,h/2+Math.sin(a)*h/3,h/18,h/18*.4); } });
+  const flag=add(g,new THREE.PlaneGeometry(2.7,1.8,10,4),new THREE.MeshStandardMaterial({map:eu,side:THREE.DoubleSide,roughness:.8}),5.85,7.2,2.5); flag.userData.flag=true;
+  palm(g,1,5,5,.25,4);
+}
+
+// Press & Media · radio, writing, podcasts: radio mast, studio, giant microphone, ON AIR board
+{ const {g,r,dir}=baseIsland('press'); signboard('press',g,r,dir);
+  hut(g,1,-2,-.6,1,C.navy);
+  const mast=new THREE.Group(); mast.position.set(-3.5,1.2,2); g.add(mast);
+  for(let i=0;i<6;i++){ add(mast,new THREE.CylinderGeometry(.12+.02*(5-i),.14+.02*(5-i),2,4),i%2?mat.red:mat.white,0,1+i*2,0); }
+  const blink=add(mast,new THREE.SphereGeometry(.3,8,6),mat.red_light.clone(),0,12.3,0); blink.userData.blink=true;
+  const mic=new THREE.Group(); mic.position.set(3.5,1.2,2.5); g.add(mic);
+  add(mic,new THREE.CylinderGeometry(.8,.9,.25,16),dark,0,.12,0);
+  add(mic,new THREE.CylinderGeometry(.09,.09,2.6,8),M(0x9aa3ab,{metalness:.7,roughness:.3}),0,1.4,0);
+  add(mic,new THREE.TorusGeometry(.65,.07,6,16,Math.PI),M(0x9aa3ab,{metalness:.7,roughness:.3}),0,2.9,0,Math.PI/2*0,0,Math.PI);
+  add(mic,new THREE.CapsuleGeometry(.48,.7,6,14),M(0x2b2f36,{metalness:.5,roughness:.4}),0,3.3,0);
+  const onair=canvasTex(512,170,(c,w,h)=>{ c.fillStyle='#111'; c.fillRect(0,0,w,h); c.fillStyle='#ff3b2f'; c.shadowColor='#ff3b2f'; c.shadowBlur=24; c.font='bold 96px sans-serif'; c.textAlign='center'; c.textBaseline='middle'; c.fillText('ON AIR',w/2,h/2+4); });
+  const bb=new THREE.Group(); bb.position.set(-1,1.2,4.6); bb.rotation.y=Math.atan2(dir.x,dir.z); g.add(bb);
+  add(bb,new THREE.PlaneGeometry(3.6,1.2),new THREE.MeshStandardMaterial({map:onair,emissive:0xffffff,emissiveMap:onair,emissiveIntensity:.9,side:THREE.DoubleSide}),0,3,0);
+  add(bb,new THREE.BoxGeometry(.15,2.6,.15),dark,-1.4,1.3,-.05); add(bb,new THREE.BoxGeometry(.15,2.6,.15),dark,1.4,1.3,-.05);
+}
+// Lighthouse
+const beamPivot=new THREE.Group(); let beamMats=[];
+{ const {g,r,dir}=baseIsland('contact'); signboard('contact',g,r,dir);
+  const lh=new THREE.Group(); lh.position.set(0,1.2,-1); g.add(lh);
+  for(let i=0;i<6;i++){ const r0=2.1-i*.22, r1=2.1-(i+1)*.22; add(lh,new THREE.CylinderGeometry(r1,r0,2.6,16),i%2?mat.red:mat.white,0,1.3+i*2.6,0); }
+  const topY=6*2.6;
+  add(lh,new THREE.CylinderGeometry(1.5,1.5,.3,16),mat.rockDark,0,topY+.15,0);
+  add(lh,new THREE.CylinderGeometry(.9,.9,1.6,12),new THREE.MeshStandardMaterial({color:0x222222,transparent:true,opacity:.35}),0,topY+1.1,0);
+  const lampMesh=add(lh,new THREE.SphereGeometry(.55,12,8),mat.lamp,0,topY+1.1,0);
+  add(lh,new THREE.ConeGeometry(1.1,1.2,12),mat.red,0,topY+2.5,0);
+  hut(g,-4.5,2.5,1.2,.7,mat.red);
+  beamPivot.position.set(0,topY+1.1,0); lh.add(beamPivot);
+  for(const side of [1,-1]){
+    const geo=new THREE.ConeGeometry(5.5,95,24,1,true); geo.translate(0,-45,0); geo.rotateZ(side*Math.PI/2);
+    const m=new THREE.MeshBasicMaterial({color:0xffe2a0,transparent:true,opacity:.18,blending:THREE.AdditiveBlending,depthWrite:false,side:THREE.DoubleSide,fog:false});
+    beamMats.push(m); beamPivot.add(new THREE.Mesh(geo,m));
+  }
+  const pl=new THREE.PointLight(0xffd27a,0,60,1.6); pl.position.set(0,topY+1.1,0); lh.add(pl); g.userData.light=pl;
+  const glowTex=canvasTex(128,128,(c,w,h)=>{ const gr=c.createRadialGradient(w/2,h/2,0,w/2,h/2,w/2); gr.addColorStop(0,'rgba(255,240,200,1)'); gr.addColorStop(.25,'rgba(255,210,120,.6)'); gr.addColorStop(1,'rgba(255,200,100,0)'); c.fillStyle=gr; c.fillRect(0,0,w,h); });
+  const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex,blending:THREE.AdditiveBlending,depthWrite:false,transparent:true,fog:false}));
+  halo.scale.set(7,7,1); halo.position.set(0,topY+1.1,0); lh.add(halo); g.userData.halo=halo;
+  const mb=new THREE.Group(); mb.position.set(3.6,1.2,2.8); g.add(mb);
+  add(mb,new THREE.BoxGeometry(.15,1.4,.15),mat.woodDark,0,.7,0); add(mb,new THREE.BoxGeometry(.6,.5,.9),mat.red,0,1.55,0);
+}
+// distant buoys
+const buoys=[];
+[[20,10],[-25,-50],[30,-65],[-45,-140],[50,-150]].forEach(([x,z],i)=>{
+  const b=new THREE.Group(); b.position.set(x,0,z); scene.add(b);
+  add(b,new THREE.CylinderGeometry(.6,.9,1.6,8),i%2?mat.red:C.mustard,0,.4,0);
+  add(b,new THREE.ConeGeometry(.5,1.2,8),i%2?mat.red:C.mustard,0,1.7,0);
+  const l=add(b,new THREE.SphereGeometry(.18,6,5),mat.red_light.clone(),0,2.4,0); l.userData.blink=true; l.userData.phase=i;
+  buoys.push(b);
+});
+
+/* ---------- ship ---------- */
+const ship=new THREE.Group(); scene.add(ship);
+const shipBody=new THREE.Group(); ship.add(shipBody);
+{
+  const s=new THREE.Shape();
+  s.moveTo(-1.7,-5.2); s.lineTo(1.7,-5.2); s.quadraticCurveTo(2.15,1.2,0,6.2); s.quadraticCurveTo(-2.15,1.2,-1.7,-5.2);
+  const hullGeo=new THREE.ExtrudeGeometry(s,{depth:2.2,bevelEnabled:true,bevelSize:.35,bevelThickness:.5,bevelSegments:2,curveSegments:12});
+  hullGeo.rotateX(Math.PI/2); hullGeo.translate(0,1.4,0);
+  const hull=add(shipBody,hullGeo,mat.hull); hull.scale.set(1,1,1);
+  const stripeGeo=new THREE.ExtrudeGeometry(s,{depth:.28,bevelEnabled:false,curveSegments:12}); stripeGeo.rotateX(Math.PI/2); stripeGeo.translate(0,1.05,0);
+  const st=add(shipBody,stripeGeo,mat.stripe); st.scale.set(1.13,1,1.05);
+  const deckGeo=new THREE.ShapeGeometry(s,12); deckGeo.rotateX(-Math.PI/2); deckGeo.translate(0,1.42,0);
+  add(shipBody,deckGeo,mat.deck);
+  add(shipBody,new THREE.BoxGeometry(2.6,1,2.6),mat.wood,0,1.9,-3.6); // stern cabin
+  add(shipBody,new THREE.BoxGeometry(.6,.4,.1),mat.win,-.6,2,-4.92); add(shipBody,new THREE.BoxGeometry(.6,.4,.1),mat.win,.6,2,-4.92);
+  add(shipBody,new THREE.CylinderGeometry(.08,.12,5,6),mat.woodDark,0,2.2,7.4,Math.PI/2-0.35,0,0); // bowsprit
+  const masts=[[0,2.6,11.5],[0,-1.3,9.5],[0,5.4,7.8]];
+  masts.forEach(([x,z,h])=>{
+    add(shipBody,new THREE.CylinderGeometry(.13,.18,h,8),mat.woodDark,x,1.4+h/2,z);
+    const nS = h>10?3:2;
+    for(let i=0;i<nS;i++){
+      const w=4.4-i*1.0, hh=h/(nS+1)*0.95;
+      const geo=new THREE.PlaneGeometry(w,hh,8,6); const pos=geo.attributes.position;
+      for(let k=0;k<pos.count;k++){ const u=pos.getX(k)/w+.5, v=pos.getY(k)/hh+.5; pos.setZ(k, Math.sin(u*Math.PI)*0.55*(0.6+0.4*v)); }
+      geo.computeVertexNormals();
+      const sail=add(shipBody,geo,mat.sail,x,1.4+h*0.22+i*(hh+.25)+hh/2,z+.25);
+      add(shipBody,new THREE.CylinderGeometry(.06,.06,w+.6,5),mat.woodDark,x,1.4+h*0.22+i*(hh+.25)+hh,z+.1,0,0,Math.PI/2);
+    }
+    add(shipBody,new THREE.ConeGeometry(.5,1,3),mat.red,x+.35,1.4+h+.1,z,0,0,-Math.PI/2).scale.set(.6,1,.1);
+  });
+  // lantern at stern
+  const lan=add(shipBody,new THREE.SphereGeometry(.28,8,6),mat.lamp,0,3.1,-4.9);
+  const sl=new THREE.PointLight(0xffc26b,0,22,1.8); sl.position.set(0,3.2,-5.4); shipBody.add(sl); ship.userData.light=sl;
+}
+ship.position.set(0,0,34);
+ship.rotation.y=Math.PI;
+
+/* ---------- the sailor who walks ashore ---------- */
+const person=new THREE.Group(); scene.add(person);
+{
+  const skin=M(0xb97a52), shirt=M(0xf4f1ea), pants=M(0x22344f), cap=M(0x1f4f8f);
+  add(person,new THREE.CapsuleGeometry(.3,.62,4,10),shirt,0,1.27,0);
+  add(person,new THREE.SphereGeometry(.25,12,10),skin,0,1.95,0);
+  add(person,new THREE.CylinderGeometry(.27,.27,.12,12),cap,0,2.15,0);
+  add(person,new THREE.BoxGeometry(.3,.05,.22),cap,0,2.1,.2);
+  const limb=(x,y,len,w,m)=>{ const g=new THREE.Group(); g.position.set(x,y,0); person.add(g); add(g,new THREE.BoxGeometry(w,len,w+.02),m,0,-len/2,0); return g; };
+  person.userData={ legL:limb(-.14,.86,.84,.17,pants), legR:limb(.14,.86,.84,.17,pants), armL:limb(-.4,1.6,.66,.13,shirt), armR:limb(.4,1.6,.66,.13,shirt) };
+}
+person.scale.setScalar(1.6);
+const DECK_LOCAL=new THREE.Vector3(-1.25,1.45,1.6);
+const P={mode:'aboard', pts:null, outPts:null, seg:0, u:0, deckAt:-1, island:null};
+function deckPoint(out){ return out.copy(DECK_LOCAL).applyMatrix4(shipBody.matrixWorld); }
+function startOut(key){
+  const I=ISLANDS[key]; P.island=key;
+  P.outPts=[deckPoint(new THREE.Vector3()), ...I.walk.map(v=>v.clone())];
+  P.pts=P.outPts; P.deckAt=0; P.seg=0; P.u=0; P.mode='out';
+}
+function startBack(){
+  if(P.mode==='aboard'||P.mode==='back') return;
+  const seg = P.mode==='ashore' ? P.outPts.length-2 : P.seg;
+  P.pts=[person.position.clone(), ...P.outPts.slice(0,seg+1).reverse()];
+  P.deckAt=P.pts.length-1; P.seg=0; P.u=0; P.mode='back';
+}
+function pose(sw){
+  const u=person.userData, a=Math.sin(time*9)*sw;
+  u.legL.rotation.x=a*.6; u.legR.rotation.x=-a*.6; u.armL.rotation.x=-a*.5; u.armR.rotation.x=a*.5;
+}
+function updatePerson(dt){
+  if(P.mode==='aboard'){ deckPoint(person.position); person.rotation.y=nav.heading; pose(0); return; }
+  if(P.mode==='ashore'){ const I=ISLANDS[P.island]; person.rotation.y=Math.atan2(I.dir.x,I.dir.z); pose(0); return; }
+  const pts=P.pts; if(P.deckAt>=0) deckPoint(pts[P.deckAt]);
+  const a=pts[P.seg], b=pts[P.seg+1]; const len=Math.max(.05,a.distanceTo(b));
+  P.u+=dt*(P.mode==='back'?3.6:2.4)/len;
+  if(P.u>=1){
+    P.u=0; P.seg++;
+    if(P.seg>=pts.length-1){
+      if(P.mode==='out'){ P.mode='ashore'; person.position.copy(pts[pts.length-1]); }
+      else { P.mode='aboard'; if(nav.pending){ const f=nav.pending; nav.pending=null; f(); } }
+      return;
+    }
+    return;
+  }
+  person.position.lerpVectors(a,b,P.u);
+  if(P.seg===P.deckAt||P.seg+1===P.deckAt) person.position.y+=Math.sin(Math.PI*P.u)*.9;
+  person.rotation.y=Math.atan2(b.x-a.x,b.z-a.z);
+  pose(1);
+}
+
+/* ---------- wake (foam particles) ---------- */
+const WAKE_N=420; const wakePos=new Float32Array(WAKE_N*3), wakeAge=new Float32Array(WAKE_N).fill(99), wakeSize=new Float32Array(WAKE_N);
+const wakeGeo=new THREE.BufferGeometry();
+wakeGeo.setAttribute('position',new THREE.BufferAttribute(wakePos,3));
+wakeGeo.setAttribute('age',new THREE.BufferAttribute(wakeAge,1));
+wakeGeo.setAttribute('size',new THREE.BufferAttribute(wakeSize,1));
+const wakeU={uNight:{value:1}, uScale:{value:innerHeight/2}};
+const wake=new THREE.Points(wakeGeo,new THREE.ShaderMaterial({
+  uniforms:wakeU, transparent:true, depthWrite:false,
+  vertexShader:`attribute float age; attribute float size; varying float vA; uniform float uScale; void main(){ vA=age; vec4 mv=modelViewMatrix*vec4(position,1.); gl_PointSize=size*(1.+age*.9)*uScale/(-mv.z); gl_Position=projectionMatrix*mv; }`,
+  fragmentShader:`varying float vA; uniform float uNight; void main(){ vec2 c=gl_PointCoord-.5; float d=length(c); float a=smoothstep(.5,.15,d)*clamp(1.-vA/3.2,0.,1.)*.55; if(a<.01) discard; gl_FragColor=vec4(vec3(.92,.97,1.)*(1.-uNight*.45),a); }`
+}));
+wake.frustumCulled=false; scene.add(wake);
+let wakeIdx=0;
+function spawnFoam(x,z,spread,size){
+  const i=wakeIdx++%WAKE_N; wakePos[i*3]=x+(Math.random()-.5)*spread; wakePos[i*3+2]=z+(Math.random()-.5)*spread; wakePos[i*3+1]=0; wakeAge[i]=0; wakeSize[i]=size;
+}
+
+/* ---------- gulls ---------- */
+const gulls=[];
+for(let i=0;i<7;i++){
+  const g=new THREE.Group(); const wm=new THREE.MeshBasicMaterial({color:0xf3f3f0,side:THREE.DoubleSide,fog:true});
+  const w1=new THREE.Mesh(new THREE.PlaneGeometry(1.4,.35),wm); w1.position.x=-.7; const p1=new THREE.Group(); p1.add(w1);
+  const w2=new THREE.Mesh(new THREE.PlaneGeometry(1.4,.35),wm); w2.position.x=.7; const p2=new THREE.Group(); p2.add(w2);
+  g.add(p1,p2); g.rotation.x=-Math.PI/2; const holder=new THREE.Group(); holder.add(g); scene.add(holder);
+  const k=ORDER[i%ORDER.length]; gulls.push({holder,p1,p2,c:ISLANDS[k].pos,r:10+Math.random()*10,h:11+Math.random()*7,sp:.25+Math.random()*.25,ph:Math.random()*6});
+}
+
+/* ============================================================
+   LABELS
+   ============================================================ */
+const labelsEl=$('#labels'); const labels={};
+ORDER.forEach(k=>{
+  const b=document.createElement('button'); b.type='button'; b.className='label'+(k==='contact'?' contact':''); b.textContent=ISLANDS[k].name;
+  b.addEventListener('click',e=>{e.stopPropagation(); sailTo(k);});
+  labelsEl.appendChild(b); labels[k]=b;
+});
+const tmpV=new THREE.Vector3();
+function updateLabels(){
+  const w=innerWidth,h=innerHeight;
+  for(const k of ORDER){
+    const I=ISLANDS[k]; tmpV.set(I.pos[0], k==='contact'?22:I.labelY+ (k==='voyage'?4:0), I.pos[1]).project(camera);
+    const el=labels[k];
+    if(tmpV.z>1||tmpV.x<-1.2||tmpV.x>1.2){ el.style.display='none'; continue; }
+    el.style.display='';
+    el.style.transform=`translate(${(tmpV.x*.5+.5)*w}px,${(-tmpV.y*.5+.5)*h}px) translate(-50%,-100%)`;
+  }
+}
+
+/* ============================================================
+   SHIP CONTROL
+   ============================================================ */
+const nav={target:null, dest:null, stage:null, speed:0, heading:Math.PI, docked:null, pending:null, backT:0};
+const keys={};
+function depart(go){
+  const wasDocked=!!nav.docked;
+  const leave=()=>{ nav.docked=null; if(wasDocked) nav.backT=1.3; go(); };
+  if(P.mode==='aboard') leave();
+  else { nav.pending=leave; startBack(); }
+}
+function setActive(key){ document.querySelectorAll('#nav button[data-go], #mnav button[data-go]').forEach(b=>b.setAttribute('aria-current', b.dataset.go===key?'true':'false')); }
+function sailTo(key){
+  hideIntro(); closeText(); setActive(key);
+  if(nav.docked===key && !nav.pending){ openPanel(key); return; }
+  closePanel();
+  depart(()=>{
+    const I=ISLANDS[key]; nav.dest=key;
+    // skip the line-up point when the ship is already out in front of this pier
+    const vx=ship.position.x-I.dock.x, vz=ship.position.z-I.dock.z;
+    const along=vx*I.dir.x+vz*I.dir.z, across=Math.abs(vx*I.side.x+vz*I.side.z);
+    if(along>8 && across<along*.8){ nav.stage='final'; nav.target=I.dock.clone(); }
+    else { nav.stage='approach'; nav.target=I.approach.clone(); }
+  });
+}
+window.__sailTo=sailTo;
+function sailToPoint(x,z){ closePanel(); setActive(null); depart(()=>{ nav.dest=null; nav.stage=null; nav.target=new THREE.Vector3(x,0,z); }); }
+document.querySelectorAll('#nav button[data-go], #mnav button[data-go]').forEach(b=>b.addEventListener('click',()=>{ closeMenu(); sailTo(b.dataset.go); }));
+const menuBtn=$('#menuBtn'), mnav=$('#mnav');
+function closeMenu(){ mnav.hidden=true; menuBtn.setAttribute('aria-expanded','false'); }
+menuBtn.addEventListener('click',()=>{ const open=mnav.hidden; mnav.hidden=!open; menuBtn.setAttribute('aria-expanded',String(open)); });
+mnav.querySelector('[data-text]').addEventListener('click',()=>{ closeMenu(); openText(); });
+canvas.addEventListener('pointerdown',closeMenu);
+$('#brand').addEventListener('click',()=>sailTo('about'));
+addEventListener('keydown',e=>{ if(e.target.closest&&e.target.closest('input,textarea')) return; keys[e.key.toLowerCase()]=true; if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright'].includes(e.key.toLowerCase())){ closePanel(); depart(()=>{ nav.target=null; nav.dest=null; nav.stage=null; }); } if(e.key==='Escape'){ closePanel(); closeText(); } });
+addEventListener('keyup',e=>{ keys[e.key.toLowerCase()]=false; });
+
+/* camera orbit (drag) + click to sail */
+let camYaw=0, camDist=24, camPitch=0.42, dragging=false, downX=0, downY=0, moved=0, lastX=0, lastY=0;
+canvas.addEventListener('pointerdown',e=>{ dragging=true; moved=0; downX=lastX=e.clientX; downY=lastY=e.clientY; canvas.setPointerCapture(e.pointerId); canvas.classList.add('dragging'); });
+canvas.addEventListener('pointermove',e=>{ if(!dragging) return; const dx=e.clientX-lastX, dy=e.clientY-lastY; lastX=e.clientX; lastY=e.clientY; moved+=Math.abs(dx)+Math.abs(dy); camYaw-=dx*.006; camPitch=Math.min(1.1,Math.max(.12,camPitch+dy*.003)); });
+canvas.addEventListener('pointerup',e=>{ dragging=false; canvas.classList.remove('dragging'); if(moved<6) handleClick(e); });
+canvas.addEventListener('wheel',e=>{ e.preventDefault(); camDist=Math.min(60,Math.max(12,camDist+e.deltaY*.02)); },{passive:false});
+const ray=new THREE.Raycaster(), mouse=new THREE.Vector2(), seaPlane=new THREE.Plane(new THREE.Vector3(0,1,0),0);
+function handleClick(e){
+  hideIntro();
+  mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1);
+  ray.setFromCamera(mouse,camera);
+  const hits=ray.intersectObjects(islandGroups,true);
+  if(hits.length){ let o=hits[0].object; while(o&&!o.userData.key) o=o.parent; if(o){ sailTo(o.userData.key); return; } }
+  const p=new THREE.Vector3(); if(ray.ray.intersectPlane(seaPlane,p)) sailToPoint(p.x,p.z);
+}
+
+/* ============================================================
+   DAY / NIGHT
+   ============================================================ */
+let night=0, nightTarget=0;
+$('#btnNight').addEventListener('click',()=>{
+  nightTarget = nightTarget>0.5?0:1;
+  const b=$('#btnNight'); b.setAttribute('aria-pressed', nightTarget>0.5); b.setAttribute('aria-label', nightTarget>0.5?'Switch to day':'Switch to night');
+  b.innerHTML = nightTarget>0.5
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>';
+});
+const lightDir=new THREE.Vector3();
+function applyPalette(t){
+  const D=PAL.day, N=PAL.night;
+  mixHex(D.zenith,N.zenith,t,skyU.uZenith.value); mixHex(D.horizon,N.horizon,t,skyU.uHorizon.value);
+  mixHex(D.sun,N.sun,t,skyU.uSunCol.value);
+  lightDir.copy(SUN_DAY).lerp(MOON,t).normalize(); skyU.uSunDir.value.copy(lightDir); skyU.uNight.value=t;
+  mixHex(D.fog,N.fog,t,scene.fog.color);
+  waterU.uDeep.value.copy(mixHex(D.deep,N.deep,t,new THREE.Color())); waterU.uShallow.value.copy(mixHex(D.shallow,N.shallow,t,new THREE.Color()));
+  waterU.uSky.value.copy(skyU.uZenith.value); waterU.uHorizon.value.copy(skyU.uHorizon.value); waterU.uFogCol.value.copy(scene.fog.color);
+  waterU.uSunDir.value.copy(lightDir); waterU.uSunCol.value.copy(skyU.uSunCol.value).multiplyScalar(D.sunInt+(N.sunInt-D.sunInt)*t); waterU.uNight.value=t;
+  mixHex(D.hemiSky,N.hemiSky,t,hemi.color); mixHex(D.hemiGround,N.hemiGround,t,hemi.groundColor); hemi.intensity=D.hemiInt+(N.hemiInt-D.hemiInt)*t;
+  sun.color.copy(skyU.uSunCol.value); sun.intensity=D.dirInt+(N.dirInt-D.dirInt)*t;
+  renderer.toneMappingExposure=D.exposure+(N.exposure-D.exposure)*t;
+  mat.win.emissiveIntensity=.15+t*2.2; mat.lamp.emissiveIntensity=2.4+t*1.6;
+  { const lhG=islandGroups.find(g=>g.userData.key==='contact'); if(lhG&&lhG.userData.halo){ lhG.userData.halo.material.opacity=.75+t*.25; const sc=6+t*5; lhG.userData.halo.scale.set(sc,sc,1); } }
+  beamMats.forEach(m=>m.opacity=.06+t*.16);
+  const lh=islandGroups.find(g=>g.userData.key==='contact'); lh.userData.light.intensity=t*90;
+  ship.userData.light.intensity=t*14;
+  wakeU.uNight.value=t;
+}
+
+/* ============================================================
+   LOOP
+   ============================================================ */
+function resize(){
+  const w=innerWidth,h=innerHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); wakeU.uScale.value=h/2;
+  if(w<640) camDist=Math.max(camDist,30);
+}
+addEventListener('resize',resize); resize();
+
+const clock=new THREE.Clock(); let time=0; let hornTimer=18;
+const fwd=new THREE.Vector3(), camPos=new THREE.Vector3(), camLook=new THREE.Vector3(), tmp=new THREE.Vector3(), tmp2=new THREE.Vector3(), tmp3=new THREE.Vector3(), UP=new THREE.Vector3(0,1,0), viewOff={x:0,y:0};
+camPos.set(0,30,80);
+function step(){
+  const dt=Math.min(clock.getDelta(),.05); time+=dt;
+  night+= (nightTarget-night)*Math.min(1,dt*1.6); applyPalette(night);
+
+  /* ship steering */
+  let desiredTurn=0, throttle=0;
+  if(nav.docked){
+    const I=ISLANDS[nav.docked], k=Math.min(1,dt*1.4);
+    ship.position.x+=(I.dock.x-ship.position.x)*k; ship.position.z+=(I.dock.z-ship.position.z)*k;
+    let dh=I.dockHeading-nav.heading; dh=Math.atan2(Math.sin(dh),Math.cos(dh)); nav.heading+=dh*Math.min(1,dt*2);
+    nav.speed*=Math.pow(.05,dt);
+  } else if(nav.target){
+    tmp.set(nav.target.x-ship.position.x,0,nav.target.z-ship.position.z);
+    for(const k of ORDER){ if(k===nav.dest) continue; const I=ISLANDS[k]; const ox=ship.position.x-I.pos[0], oz=ship.position.z-I.pos[1]; const d=Math.hypot(ox,oz); const R=I.r+9; if(d<R+8){ const f=(R+8-d)/8*25; tmp.x+=ox/d*f; tmp.z+=oz/d*f; } }
+    const dist=Math.hypot(nav.target.x-ship.position.x, nav.target.z-ship.position.z);
+    const want=Math.atan2(tmp.x,tmp.z);
+    let diff=want-nav.heading; diff=Math.atan2(Math.sin(diff),Math.cos(diff));
+    desiredTurn=Math.max(-1,Math.min(1,diff*1.6));
+    const slow = nav.stage==='final' ? .26 : 1;
+    throttle=Math.min(slow,dist/(nav.stage==='final'?10:18))*(1-Math.min(.85,Math.abs(diff)/1.4));
+    if(nav.backT>0){ nav.backT-=dt; throttle=-.55; }
+    if(nav.stage==='approach' && dist<6){ nav.stage='final'; nav.target=ISLANDS[nav.dest].dock.clone(); }
+    else if(dist<(nav.stage==='final'?2.2:2.2)){
+      nav.target=null; throttle=0;
+      if(nav.dest){
+        const k=nav.dest; nav.docked=k; nav.dest=null; nav.stage=null; Sound.bell();
+        setTimeout(()=>{ if(nav.docked===k){ startOut(k); openPanel(k); } },700);
+      }
+    }
+  } else {
+    if(keys['w']||keys['arrowup']) throttle=1;
+    if(keys['s']||keys['arrowdown']) throttle=-.3;
+    if(keys['a']||keys['arrowleft']) desiredTurn=1;
+    if(keys['d']||keys['arrowright']) desiredTurn=-1;
+  }
+  const maxSpeed=23;
+  const goal=throttle*maxSpeed;
+  nav.speed += (goal-nav.speed)*Math.min(1,dt*(Math.abs(goal)>Math.abs(nav.speed)?1.9:1.2));
+  nav.heading += desiredTurn*dt*1.8*Math.min(1,Math.abs(nav.speed)/6+.5);
+  ship.position.x += Math.sin(nav.heading)*nav.speed*dt;
+  ship.position.z += Math.cos(nav.heading)*nav.speed*dt;
+  // keep inside the sea
+  ship.position.x=Math.max(-240,Math.min(240,ship.position.x)); ship.position.z=Math.max(-300,Math.min(140,ship.position.z));
+
+  /* bobbing on waves */
+  const sx=ship.position.x, sz=ship.position.z, ch=Math.cos(nav.heading), sh=Math.sin(nav.heading);
+  const hC=waveH(sx,sz,time), hF=waveH(sx+sh*5,sz+ch*5,time), hB=waveH(sx-sh*5,sz-ch*5,time), hL=waveH(sx+ch*2,sz-sh*2,time), hR=waveH(sx-ch*2,sz+sh*2,time);
+  ship.position.y=hC*.85-0.35;
+  ship.rotation.set(0,nav.heading,0);
+  shipBody.rotation.x = -Math.atan2(hF-hB,10)*.9;
+  shipBody.rotation.z = Math.atan2(hL-hR,4)*.6 - desiredTurn*Math.min(1,nav.speed/maxSpeed)*.06;
+
+  ship.updateMatrixWorld(true);
+  updatePerson(dt);
+
+  /* wake */
+  if(Math.abs(nav.speed)>1.2){
+    const n=Math.min(4,Math.ceil(Math.abs(nav.speed)/4));
+    for(let i=0;i<n;i++){ spawnFoam(sx-sh*5.6, sz-ch*5.6, 1.6, 2.2); }
+    if(Math.random()<.5){ spawnFoam(sx+sh*5.8+ch*1.2, sz+ch*5.8-sh*1.2, .6, 1.4); spawnFoam(sx+sh*5.8-ch*1.2, sz+ch*5.8+sh*1.2, .6, 1.4); }
+  }
+  for(let i=0;i<WAKE_N;i++){ if(wakeAge[i]<5){ wakeAge[i]+=dt; wakePos[i*3+1]=waveH(wakePos[i*3],wakePos[i*3+2],time)+.08; } }
+  wakeGeo.attributes.position.needsUpdate=true; wakeGeo.attributes.age.needsUpdate=true; wakeGeo.attributes.size.needsUpdate=true;
+
+  /* world animation */
+  waterU.uTime.value=time; skyU.uTime.value=time;
+  beamPivot.rotation.y += dt*(reduceMotion?.25:.7);
+  if(windmill) windmill.rotation.z -= dt*(reduceMotion?.2:.6);
+  for(const b of buoys){ b.position.y=waveH(b.position.x,b.position.z,time)*.9; b.rotation.z=Math.sin(time*1.3+b.position.x)*.12; }
+  scene.traverse(o=>{
+    if(o.userData.blink){ o.material.emissiveIntensity = (Math.sin(time*3+(o.userData.phase||0))>0.6?3:.2); }
+    if(o.userData.flicker){ o.scale.y=.85+Math.sin(time*13)*.1+Math.sin(time*7.3)*.08; }
+    if(o.userData.flag){ const p=o.geometry.attributes.position; for(let i=0;i<p.count;i++){ const x=p.getX(i); p.setZ(i,Math.sin(x*2.4-time*4)*.18*(x+1.3)); } p.needsUpdate=true; }
+  });
+  for(const g of gulls){
+    const a=time*g.sp+g.ph; g.holder.position.set(g.c[0]+Math.cos(a)*g.r, g.h+Math.sin(a*2)*.8, g.c[1]+Math.sin(a)*g.r);
+    g.holder.rotation.y=-a; const f=Math.sin(time*8+g.ph)*.5; g.p1.rotation.y=f; g.p2.rotation.y=-f;
+  }
+
+  /* foghorn at night, now and then */
+  hornTimer-=dt; if(hornTimer<0){ hornTimer=35+Math.random()*25; if(night>.6) Sound.horn(); }
+
+  /* camera */
+  if(nav.docked){
+    const I=ISLANDS[nav.docked];
+    // look between the island and the sailor, so his walk from deck to shore stays in frame
+    const look=tmp.set(I.pos[0],0,I.pos[1]).addScaledVector(I.dir,I.r*.7);
+    look.lerp(person.position, P.mode==='aboard'?0.3:0.6); look.y=2.6;
+    const off=tmp2.copy(I.dir).multiplyScalar(13).addScaledVector(I.side,-15); off.y=0;   // pier side, ship behind
+    off.applyAxisAngle(UP,camYaw); off.y=7+camPitch*6;
+    camPos.lerp(tmp3.copy(look).add(off), Math.min(1,dt*1.6));
+    camLook.lerp(look, Math.min(1,dt*2.2));
+  } else {
+    const yaw=nav.heading+Math.PI+camYaw;
+    const dist=camDist*(innerWidth<640?1.25:1);
+    tmp.set(sx+Math.sin(yaw)*Math.cos(camPitch)*dist, 3+Math.sin(camPitch)*dist, sz+Math.cos(yaw)*Math.cos(camPitch)*dist);
+    camPos.lerp(tmp, Math.min(1,dt*1.8));
+    camLook.lerp(tmp.set(sx+sh*6, 3.5, sz+ch*6), Math.min(1,dt*3));
+    if(!dragging) camYaw*=Math.pow(.6,dt);
+  }
+  camera.position.copy(camPos);
+  camera.lookAt(camLook);
+  // keep the docked island centred in the space the panel leaves free
+  const open=panel.classList.contains('open'), W=innerWidth, H=innerHeight;
+  const goalX = open && W>=640 ? Math.min(520,W)/2 : 0, goalY = open && W<640 ? H*.78/2*.8 : 0;
+  viewOff.x+=(goalX-viewOff.x)*Math.min(1,dt*3); viewOff.y+=(goalY-viewOff.y)*Math.min(1,dt*3);
+  camera.setViewOffset(W,H,viewOff.x,viewOff.y,W,H);
+  sky.position.copy(camera.position);
+  sun.position.copy(lightDir).multiplyScalar(200).add(ship.position); sun.target.position.copy(ship.position);
+
+  renderer.render(scene,camera);
+  updateLabels();
+  requestAnimationFrame(step);
+}
+applyPalette(0);
+requestAnimationFrame(step);
+
+function route(){
+  const h=location.hash.slice(1);
+  if(h==='log'){ openText(); return; }
+  if(ISLANDS[h]){ hideIntro(); sailTo(h); }
+}
+addEventListener('hashchange',route); route();
+</script>
+</body>
+</html>
