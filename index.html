@@ -1333,8 +1333,12 @@ function sailTo(key){
     else { nav.stage='approach'; nav.target=I.approach.clone(); }
   });
 }
-window.__sailTo=sailTo;
-function sailToPoint(x,z){ closePanel(); setActive(null); depart(()=>{ nav.dest=null; nav.stage=null; nav.target=new THREE.Vector3(x,0,z); }); }
+window.__sailTo=sailTo; window.__pt=(x,z)=>sailToPoint(x,z); window.__nav=()=>({t:!!nav.target,v:+nav.speed.toFixed(2),h:+nav.heading.toFixed(2),x:+ship.position.x.toFixed(1),z:+ship.position.z.toFixed(1)});
+function sailToPoint(x,z){
+  // keep the spot inside the sea and outside every island, so the ship can actually reach it
+  x=Math.max(-232,Math.min(232,x)); z=Math.max(-292,Math.min(132,z));
+  for(const k of ORDER){ const I=ISLANDS[k], ox=x-I.pos[0], oz=z-I.pos[1], d=Math.hypot(ox,oz)||1, R=I.r+12; if(d<R){ x=I.pos[0]+ox/d*R; z=I.pos[1]+oz/d*R; } }
+  closePanel(); setActive(null); depart(()=>{ nav.dest=null; nav.stage=null; nav.target=new THREE.Vector3(x,0,z); nav.best=1e9; nav.stuckT=0; }); }
 document.querySelectorAll('#nav button[data-go], #mnav button[data-go]').forEach(b=>b.addEventListener('click',()=>{ closeMenu(); sailTo(b.dataset.go); }));
 const menuBtn=$('#menuBtn'), mnav=$('#mnav');
 function closeMenu(){ mnav.hidden=true; menuBtn.setAttribute('aria-expanded','false'); }
@@ -1437,7 +1441,12 @@ function step(){
     const slow = nav.stage==='final' ? .26 : 1;
     throttle=Math.min(slow,dist/(nav.stage==='final'?10:18))*(1-Math.min(.85,Math.abs(diff)/1.4));
     if(nav.backT>0){ nav.backT-=dt; throttle=-.55; }
-    if(nav.stage==='approach' && dist<6){ nav.stage='final'; nav.target=ISLANDS[nav.dest].dock.clone(); }
+    if(!nav.dest){ // free sailing: stop near the spot, or if it is no longer getting closer (it would only circle)
+      if(dist<nav.best-0.5){ nav.best=dist; nav.stuckT=0; } else nav.stuckT=(nav.stuckT||0)+dt;
+      if(dist<7 || nav.stuckT>2.5 || (dist<16 && Math.abs(diff)>1.7)){ nav.target=null; throttle=0; }
+    }
+    if(!nav.target){}
+    else if(nav.stage==='approach' && dist<6){ nav.stage='final'; nav.target=ISLANDS[nav.dest].dock.clone(); }
     else if(dist<(nav.stage==='final'?2.2:2.2)){
       nav.target=null; throttle=0;
       if(nav.dest){
