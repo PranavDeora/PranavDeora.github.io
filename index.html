@@ -50,7 +50,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Layout idea: a living night sea fills the screen; a ship's-log panel slides in from the right when the ship docks. */
@@ -241,6 +241,122 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
 @media (prefers-reduced-motion:reduce){
   #panel,#intro,.card{transition:none}
 }
+
+/* ============================================================
+   READING VIEW: a printed ship's log / travel journal.
+   Paper and ink, one serif for reading, hairline rules instead of boxes.
+   Body ~19px, line-height ~1.55, measure ~64ch (Butterick). No gradients, no glass, no cards.
+   ============================================================ */
+#panel,#textlog{
+  --paper:#f3ede1; --paper-2:#e9e1d1; --ink:#1c2630; --ink-2:#56616b; --rule:#cfc3ad;
+  --sea:#1d4a70; --rust:#a3442a;
+  color-scheme:light; color:var(--ink);
+  font-family:"Newsreader", Georgia, "Times New Roman", serif;
+  font-size:19px; line-height:1.55; -webkit-font-smoothing:auto;
+  font-feature-settings:"kern","liga","onum";
+}
+#panel{background:var(--paper);border-left:1px solid var(--rule);box-shadow:-18px 0 40px rgba(4,14,26,.25);width:min(560px,100%)}
+#textlog{background:var(--paper)}
+#panel a,#textlog a{color:var(--sea);text-decoration-thickness:1px;text-underline-offset:3px}
+#panel a:hover,#textlog a:hover{color:var(--rust)}
+#panel :focus-visible,#textlog :focus-visible{outline-color:var(--sea)}
+#panel .mono,#textlog .mono{color:var(--ink-2)}
+
+.panel-head{background:var(--paper);border-bottom:1px solid var(--rule);padding:14px 26px}
+.panel-head .mono{color:var(--ink-2);letter-spacing:.12em}
+.panel-close{border:0;border-radius:0;padding:4px 0;color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--ink)}
+.panel-close:hover{color:var(--rust);border-color:var(--rust)}
+.panel-body{padding:30px 30px 60px}
+
+#panel .sec,#textlog .sec{gap:18px}
+#panel h1,#panel h2,#panel h3,#textlog h1,#textlog h2,#textlog h3{font-family:"Newsreader",Georgia,serif;color:var(--ink)}
+#panel .sec h2,#textlog .sec h2{font-size:2.15rem;font-weight:500;letter-spacing:-.015em;line-height:1.1;margin-bottom:2px}
+#panel .sec h3,#textlog .sec h3{font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);border-top:1px solid var(--rule);padding-top:14px;margin-top:22px}
+#panel .sec p,#textlog .sec p{color:var(--ink);max-width:64ch}
+#panel .kicker,#textlog .kicker{color:var(--ink-2);letter-spacing:.16em;font-size:.68rem}
+#panel .note,#textlog .note{color:var(--ink-2);font-style:italic;font-size:.92rem}
+
+/* figures: plain prints with a quiet italic caption */
+#panel .stats,#textlog .stats{grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+#panel .stat,#textlog .stat{border:0;border-radius:0;background:none;padding:12px 14px 12px 0;border-bottom:1px solid var(--rule)}
+#panel .stat:nth-child(even),#textlog .stat:nth-child(even){padding-left:14px;border-left:1px solid var(--rule)}
+#panel .stat:nth-last-child(-n+2),#textlog .stat:nth-last-child(-n+2){border-bottom:0}
+#panel .stat b,#textlog .stat b{font-family:"Newsreader",serif;font-weight:500;font-size:1.65rem;color:var(--ink);font-feature-settings:"lnum","tnum"}
+#panel .stat span,#textlog .stat span{color:var(--ink-2);font-size:.86rem;line-height:1.35}
+#panel a.stat:hover,#textlog a.stat:hover{background:var(--paper-2)}
+
+/* the log: a hand-ruled margin line, small open circles */
+#panel .log,#textlog .log{border-left:1px solid var(--rule);margin-left:4px}
+#panel .log li::before,#textlog .log li::before{width:9px;height:9px;left:-5px;top:9px;background:var(--paper);border:1.5px solid var(--rust)}
+#panel .log li,#textlog .log li{padding:0 0 22px 22px}
+#panel .log .when,#textlog .log .when{color:var(--ink-2);font-size:.68rem;letter-spacing:.08em}
+#panel .log .what,#textlog .log .what{font-weight:600;font-size:1.04rem;line-height:1.35;margin:3px 0 1px}
+#panel .log .where,#textlog .log .where{color:var(--ink-2);font-style:italic;font-size:.94rem}
+#panel .log p,#textlog .log p{font-size:.98rem;margin-top:5px}
+#panel .log ul,#textlog .log ul{color:var(--ink);font-size:.98rem;padding-left:18px}
+#panel .log ul li,#textlog .log ul li{padding:0;margin:3px 0}
+
+#panel blockquote,#textlog blockquote{background:none;border-radius:0;border-left:2px solid var(--rust);padding:2px 0 2px 18px;font-family:"Newsreader",serif;font-style:italic;font-size:1.3rem;line-height:1.4;color:var(--ink)}
+#panel blockquote cite,#textlog blockquote cite{font-style:normal;margin-top:8px}
+#panel blockquote cite a,#textlog blockquote cite a{color:var(--ink-2)}
+
+/* toolkit and languages read as a sentence, not pill badges */
+#panel .chips,#textlog .chips{display:block;line-height:1.7}
+#panel .chip,#textlog .chip{border:0;border-radius:0;padding:0;font-size:1rem;color:var(--ink)}
+#panel .chip+.chip::before,#textlog .chip+.chip::before{content:" · ";color:var(--rust)}
+
+#panel .links,#textlog .links{gap:0;border-top:1px solid var(--rule)}
+#panel .links li,#textlog .links li{border:0;border-bottom:1px solid var(--rule);border-radius:0;background:none;padding:12px 0}
+#panel .links .src,#textlog .links .src{color:var(--ink-2);font-size:.64rem;letter-spacing:.12em}
+#panel .links a,#textlog .links a{font-weight:500;font-size:1.06rem;line-height:1.35;margin:3px 0}
+#panel .links p,#textlog .links p{color:var(--ink-2);font-size:.92rem}
+
+#panel .ports div,#textlog .ports div{border-bottom:1px dotted var(--rule);font-size:.98rem}
+
+#panel .photo,#textlog .photo{gap:7px;margin:4px 0}
+#panel .photo img,#textlog .photo img{border:0;border-radius:2px;aspect-ratio:auto;height:auto;background:var(--paper-2)}
+#panel .photo figcaption,#textlog .photo figcaption{font-family:"Newsreader",serif;font-style:italic;font-size:.88rem;letter-spacing:0;color:var(--ink-2);line-height:1.4}
+#panel .photo.lead,#textlog .photo.lead{margin:6px 0 4px}
+.log .photo{margin-top:12px!important}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;margin-top:10px}
+/* postcards: two loose columns, every print keeps its own shape */
+.journal{columns:2;column-gap:16px}
+#textlog .journal{columns:3}
+#panel .photo.tall,#textlog .photo.tall{max-width:380px}
+.pair .photo.tall{max-width:none!important}
+.journal .photo{break-inside:avoid;margin:0 0 18px!important;display:flex}
+.journal .photo:nth-child(3n+2) img{transform:rotate(-.6deg)}
+.journal .photo:nth-child(3n) img{transform:rotate(.5deg)}
+
+#panel .copyrow code,#textlog .copyrow code{background:var(--paper-2);border:1px solid var(--rule);border-radius:2px;color:var(--ink)}
+#panel .btn,#textlog .btn{border-radius:2px;border:1px solid var(--ink);background:none;color:var(--ink);text-shadow:none;font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px}
+#panel .btn:hover,#textlog .btn:hover{background:var(--ink);color:var(--paper)}
+#textlog .btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#textlog .btn.primary:hover{background:var(--rust);border-color:var(--rust)}
+#panel .swipe-btns button,#textlog .swipe-btns button{background:var(--paper);border:1px solid var(--ink);color:var(--ink)}
+#panel .swipe-btns button:hover,#textlog .swipe-btns button:hover{background:var(--ink);color:var(--paper)}
+#panel .swipe-count,#textlog .swipe-count{font-style:normal}
+
+/* text edition: a two-column book page */
+#textlog .tl-wrap{max-width:1080px;padding:48px 28px 100px;gap:64px;grid-template-columns:260px minmax(0,1fr)}
+#textlog .tl-side h1{font-size:2.6rem;font-weight:500;letter-spacing:-.02em}
+#textlog .tl-side p{color:var(--ink-2);font-style:italic}
+#textlog .tl-side nav{border-top:1px solid var(--rule);padding-top:10px}
+#textlog .tl-side nav a{color:var(--ink);text-decoration:none;font-size:1rem;padding:5px 0;border-bottom:1px dotted var(--rule)}
+#textlog .tl-side nav a:hover{color:var(--rust)}
+#textlog .tl-main{gap:84px;max-width:680px}
+#textlog .tl-main .sec{border-top:2px solid var(--ink);padding-top:22px}
+@media (max-width:820px){#textlog .tl-wrap{grid-template-columns:1fr;gap:40px}#textlog .tl-side{position:static}#textlog .tl-main{max-width:none}}
+.tl-main .photo,.tl-main .gallery{max-width:none}
+@media (max-width:640px){
+  #panel,#textlog{font-size:18px}
+  #panel{border-left:0;border-top:1px solid var(--rule);border-radius:0;box-shadow:0 -14px 40px rgba(4,14,26,.3)}
+  .panel-body{padding:24px 20px 50px}
+  #panel .sec h2,#textlog .sec h2{font-size:1.8rem}
+  .journal,#textlog .journal{columns:2;column-gap:10px}
+  .pair{gap:10px}
+  #textlog .tl-wrap{padding:28px 20px 80px;gap:36px}
+}
 </style>
 </head>
 <body class="intro-on">
@@ -312,7 +428,7 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
 <div id="textlog" aria-label="Full text version">
   <div class="tl-wrap">
     <aside class="tl-side">
-      <span class="mono" style="color:var(--beam)">SHIP'S LOG · TEXT EDITION</span>
+      <span class="mono">SHIP'S LOG · TEXT EDITION</span>
       <h1>Pranav Deora</h1>
       <p>Co-founder of Shazlo · BBA (Hons) Supply Chain Management, Ahmedabad University · Erasmus+ scholar</p>
       <nav aria-label="Sections">
@@ -329,7 +445,7 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
 <section class="sec" id="t-about">
     <span class="kicker">Home Port · Ahmedabad</span>
     <h2>Hi, I'm Pranav.</h2>
-    <figure class="photo hero"><img src="img/ibiza.jpg" alt="Pranav on the deck of a boat off Ibiza, arms raised, open blue sea behind him" loading="lazy" width="825" height="1100"><figcaption>IBIZA, SPAIN · 2026</figcaption></figure>
+    <figure class="photo lead"><img src="img/barcelona-mnac.jpg" alt="Pranav smiling with arms crossed in front of the National Art Museum of Catalonia on Montjuïc, Barcelona" loading="lazy" width="1400" height="1050"><figcaption>Montjuïc, Barcelona, May 2026. The National Art Museum of Catalonia behind me.</figcaption></figure>
     <p>I was born in Jalore, Rajasthan, spent ten years at boarding school in Mount Abu, and switched from science to business when I came to Ahmedabad University. I'm now in my final year of a BBA (Honours) in Supply Chain Management, building a fashion-discovery startup called Shazlo on the side.</p>
     <p>My interests sit where supply chain management, ERP and international trade meet. In 2026 an Erasmus+ scholarship took me out of India for the first time, to study international business at the University of Valladolid in Spain.</p>
     <div class="stats">
@@ -353,6 +469,7 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
       <li><span class="when">2024</span><div class="what">Verbal Mention, PDEU Youth Parliament</div><div class="where">Pandit Deendayal Energy University · my first MUN</div></li>
     </ul>
     <h3>Lessons from the voyage so far</h3>
+    <figure class="photo"><img src="img/au-speaking.jpg" alt="Pranav speaking into a microphone at an Ahmedabad University event" loading="lazy" width="1400" height="1050"><figcaption>Speaking at an Ahmedabad University event.</figcaption></figure>
     <blockquote>Opportunities come from the right connections, the right mindset, and the courage to take initiative.<cite><a href="https://ahduni.edu.in/blog/how-a-chance-encounter-landed-me-an-internship-with-forbes-marshall/" target="_blank" rel="noopener">FROM MY STORY ON THE AHMEDABAD UNIVERSITY BLOG, OCT 2025 ↗</a></cite></blockquote>
     <blockquote>Ahmedabad University gave me that platform; Forbes Marshall gave me the stage to perform.<cite><a href="https://ahduni.edu.in/blog/how-a-chance-encounter-landed-me-an-internship-with-forbes-marshall/" target="_blank" rel="noopener">READ THE FULL STORY ↗</a></cite></blockquote>
     <h3>Toolkit</h3>
@@ -388,7 +505,7 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
     <ul class="log">
       <li><span class="when">AUG 2026 – NOW · 23.03°N 72.58°E</span><div class="what">Capstone project, Arvind Advanced Materials (AAML)</div><div class="where">Ahmedabad University · team of four</div><p>Building a U.S. market-entry strategy in dry filtration for Dalco GFT, the U.S. nonwovens manufacturer AAML recently acquired.</p></li>
       <li><span class="when">JUL 2026 · 23.03°N 72.58°E</span><div class="what">Climate Fellow, Ahmedabad University × University of Chicago</div><div class="where">1 of 30 fellows · two-week residential programme</div><p>Worked in a six-member team on methane capture at Ahmedabad's Pirana landfill, with source-level waste segregation as the long-term fix.</p>
-        <figure class="photo wide" style="margin-top:8px"><img src="img/climate.jpg" alt="Pranav working on a laptop during the Climate Fellows Programme" loading="lazy" width="1100" height="733"><figcaption>CLIMATE FELLOWS PROGRAMME · JULY 2026</figcaption></figure></li>
+        <figure class="photo"><img src="img/climate.jpg" alt="Pranav working on a laptop during the Climate Fellows Programme" loading="lazy" width="1400" height="1166"><figcaption>Deep in the methane numbers, Climate Fellows Programme, July 2026.</figcaption></figure></li>
       <li><span class="when">JAN – JUN 2026 · 41.65°N 4.72°W</span><div class="what">Erasmus+ exchange, Universidad de Valladolid</div><div class="where">Spain · class representative, International Trade</div><p>Sail to Erasmus Island for the full story.</p></li>
       <li><span class="when">OCT 2025 – NOW</span><div class="what">Co-founder &amp; CEO, Shazlo</div><div class="where">Ahmedabad</div><p>Swipe-based fashion discovery; ₹75,000 SSIP 2.0 grant.</p></li>
       <li><span class="when">AUG – DEC 2025</span><div class="what">Google Gemini Student Ambassador</div><div class="where">Also a Perplexity ambassador</div><p>Ran AI workshops on campus, including "Beyond Prompt" for students in the Student Village.</p></li>
@@ -410,8 +527,8 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
       <li><span class="when">JAN 2024 – MAY 2025</span><div class="what">Radio jockey, then Head of Management, Stepwell Radio</div><div class="where">Ahmedabad University's student-run radio station</div></li>
       <li><span class="when">SEP 2023 – JUN 2024</span><div class="what">Undergraduate Research Programme</div><p>Annotated resumes for an open Resume Corpus dataset (named-entity recognition, 36 entities). Second on the task leaderboard.</p></li>
       <li><span class="when">NOV 2024 · 30 HOURS</span><div class="what">Volunteer, India Recycles</div><p>Sorted, tagged and priced pre-owned clothing at ₹10–20 so underserved communities could buy fashion they can afford. It taught me the dignity of labour and the challenges informal workers face.</p></li>
-      <li><span class="when">AUG 2023 – NOW</span><div class="what">University fests &amp; events</div><p>Helped run the Annual Convocation, Youth Fest (Panorama), Management Fest (Concourse), Alumni Reunion (Purani Jeans), Anand Mela and the inauguration of the Sahyog Centre for Promoting Health.</p></li>
-      <li><span class="when">2023 – 2024</span><div class="what">Conferences</div><p>Headed the Annual Economic Conference; committee member for the 5th Annual Heritage Conference and the Asia Pacific Innovation Conference.</p></li>
+      <li><span class="when">AUG 2023 – NOW</span><div class="what">University fests &amp; events</div><p>Helped run the Annual Convocation, Youth Fest (Panorama), Management Fest (Concourse), Alumni Reunion (Purani Jeans), Anand Mela and the inauguration of the Sahyog Centre for Promoting Health.</p><figure class="photo"><img src="img/au-mic.jpg" alt="Pranav holding a microphone and notes at a university event" loading="lazy" width="1400" height="1050"><figcaption>Hosting at a campus event, Ahmedabad University.</figcaption></figure></li>
+      <li><span class="when">2023 – 2024</span><div class="what">Conferences</div><p>Headed the Annual Economic Conference; committee member for the 5th Annual Heritage Conference and the Asia Pacific Innovation Conference.</p><figure class="photo"><img src="img/au-certificate.jpg" alt="Pranav receiving a certificate on stage at the Annual Heritage Conference" loading="lazy" width="1400" height="1050"><figcaption>Receiving my certificate at the Heritage Conference, Ahmedabad University.</figcaption></figure></li>
       <li><span class="when">2024</span><div class="what">PDEU Youth Parliament (Model United Nations)</div><p>My first MUN. Represented Adhir Ranjan Chowdhury in the Lok Sabha committee and received a verbal mention at the closing ceremony.</p></li>
     </ul>
   </section>
@@ -427,19 +544,33 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
     </div>
     <h3>What I did</h3>
     <ul class="log">
-      <li><div class="what">Elected class representative</div><p>For International Trade, by anonymous vote. Helped Professor Santiago Enciso run the course's company visits and extracurricular activities.</p></li>
-      <li><div class="what">Shared India</div><p>Hosted an Indian dinner, gave a talk on India and taught garba. Recorded the ESN Valladolid podcast <a href="https://open.spotify.com/episode/6StbaM3r4bUZO9o5kpWnux" target="_blank" rel="noopener">Nation to Nation: India with Pranav</a>.</p></li>
+      <li><div class="what">Elected class representative</div><p>For International Trade, by anonymous vote. Helped Professor Santiago Enciso run the course's company visits and extracurricular activities.</p><figure class="photo tall"><img src="img/uva-presenting.jpg" alt="Pranav presenting a slide on Hofstede's cultural dimensions, India versus the United Kingdom, in a Valladolid classroom" loading="lazy" width="1050" height="1400"><figcaption>Presenting Hofstede's cultural dimensions, India and the UK side by side, at the Facultad de Comercio.</figcaption></figure></li>
+      <li><div class="what">Shared India</div><p>Hosted an Indian dinner, gave a talk on India and taught garba. Recorded the ESN Valladolid podcast <a href="https://open.spotify.com/episode/6StbaM3r4bUZO9o5kpWnux" target="_blank" rel="noopener">Nation to Nation: India with Pranav</a>.</p><div class="pair"><figure class="photo"><img src="img/uva-garba.jpg" alt="Pranav teaching garba steps to a line of international students" loading="lazy" width="1400" height="1050"><figcaption>Teaching the first garba steps.</figcaption></figure><figure class="photo"><img src="img/uva-india-night.jpg" alt="Group photo of about thirty international students around a screen reading Welcome to India" loading="lazy" width="1400" height="1050"><figcaption>India night: about thirty-five guests, one very full room.</figcaption></figure></div></li>
       <li><div class="what">Click for Change! Young People Against Digital Hate</div><p>A fully funded six-day Erasmus+ youth exchange in Benicàssim on hate speech and misinformation, with travel and stay covered. We stayed at a youth hostel right on the beach. I was India's only participant, and it was my first time at a beach.</p></li>
       <li><div class="what">Learned beyond class</div><p>Food Innovation Hackathon, European Values Session, III Interuniversity Conference on Development Cooperation. At Casa de la India I found out that Ahmedabad and Valladolid are sister cities.</p></li>
     </ul>
     <h3>Postcards</h3>
-    <div class="gallery">
-      <figure class="photo"><img src="img/lisbon.jpg" alt="Pranav jumping beside the LISBOA letters with Belém Tower behind" loading="lazy" width="825" height="1100"><figcaption>LISBON, PORTUGAL</figcaption></figure>
-      <figure class="photo"><img src="img/porto.jpg" alt="Pranav with arms wide on the steps of Porto City Hall" loading="lazy" width="825" height="1100"><figcaption>PORTO, PORTUGAL</figcaption></figure>
-      <figure class="photo"><img src="img/barcelona.jpg" alt="Pranav in front of the Sagrada Família in Barcelona at 6 am" loading="lazy" width="825" height="1100"><figcaption>BARCELONA · REACHED AT 6 AM</figcaption></figure>
-      <figure class="photo"><img src="img/asprona.jpg" alt="Pranav volunteering in an orange staff vest at the 49th Marcha Asprona" loading="lazy" width="825" height="1100"><figcaption>VOLUNTEERING · MARCHA ASPRONA</figcaption></figure>
+    <p class="note">Weekends and long weekends, mostly by bus and train.</p>
+    <div class="journal">
+      <figure class="photo"><img src="img/valladolid-sign.jpg" alt="Pranav beside the large VALLADOLID letters in a city square" loading="lazy" width="1296" height="1400"><figcaption>Valladolid, the city I called home.</figcaption></figure>
+      <figure class="photo"><img src="img/valladolid-sangregorio.jpg" alt="Pranav with arms open in front of the carved stone facade of the Colegio de San Gregorio" loading="lazy" width="1235" height="1400"><figcaption>Colegio de San Gregorio, Valladolid.</figcaption></figure>
+      <figure class="photo"><img src="img/simancas-river.jpg" alt="View over the Pisuerga river and an old stone bridge from the castle town of Simancas" loading="lazy" width="1346" height="1400"><figcaption>Simancas, a town of five thousand, from the top.</figcaption></figure>
+      <figure class="photo"><img src="img/burgos-compass.jpg" alt="Pranav standing on a compass rose at a viewpoint above Burgos, the cathedral spires behind" loading="lazy" width="1235" height="1400"><figcaption>Burgos, from the castle hill.</figcaption></figure>
+      <figure class="photo"><img src="img/barcelona-sagrada.jpg" alt="Pranav with arms raised in front of the Sagrada Família" loading="lazy" width="693" height="1400"><figcaption>Sagrada Família, Barcelona. Reached at six in the morning.</figcaption></figure>
+      <figure class="photo"><img src="img/barcelona-ciutadella.jpg" alt="Pranav with arms crossed by the Cascada fountain in Ciutadella Park" loading="lazy" width="1220" height="1400"><figcaption>Parc de la Ciutadella, Barcelona.</figcaption></figure>
+      <figure class="photo"><img src="img/valencia-street.jpg" alt="An arched gateway on a quiet old street in Valencia" loading="lazy" width="1050" height="1400"><figcaption>Old town, Valencia.</figcaption></figure>
+      <figure class="photo"><img src="img/valencia-beach.jpg" alt="Palm trees and a grey sea on a Mediterranean beach" loading="lazy" width="1050" height="1400"><figcaption>The Mediterranean on a grey morning, during the youth exchange.</figcaption></figure>
+      <figure class="photo"><img src="img/ibiza-water.jpg" alt="Pranav standing in clear shallow water off Ibiza" loading="lazy" width="1250" height="1400"><figcaption>First time in ocean water, Ibiza.</figcaption></figure>
+      <figure class="photo"><img src="img/ibiza-lighthouse.jpg" alt="The white lighthouse at the port of Ibiza under a blue sky" loading="lazy" width="1280" height="1400"><figcaption>The harbour lighthouse, Ibiza.</figcaption></figure>
+      <figure class="photo"><img src="img/lisbon-belem.jpg" alt="Pranav jumping beside the LISBOA letters with Belém Tower behind" loading="lazy" width="1117" height="1400"><figcaption>Belém, Lisbon.</figcaption></figure>
+      <figure class="photo"><img src="img/lisbon-golden-hour.jpg" alt="Golden-hour view over the rooftops of Lisbon toward the castle" loading="lazy" width="1221" height="1400"><figcaption>Golden hour from the highest point in Lisbon.</figcaption></figure>
+      <figure class="photo"><img src="img/lisbon-stairs.jpg" alt="Pranav standing halfway up a long stone stairway between yellow buildings in Lisbon" loading="lazy" width="1050" height="1400"><figcaption>One of Lisbon's endless stairways.</figcaption></figure>
+      <figure class="photo"><img src="img/lisbon-stairs-climb.jpg" alt="Pranav seen from behind climbing the same Lisbon stairway" loading="lazy" width="1050" height="1400"><figcaption>…and climbing it.</figcaption></figure>
+      <figure class="photo"><img src="img/lisbon-mirror.jpg" alt="Pranav taking a mirror selfie in sunglasses in a Lisbon courtyard" loading="lazy" width="1050" height="1400"><figcaption>A café courtyard, Lisbon.</figcaption></figure>
+      <figure class="photo"><img src="img/madrid-park.jpg" alt="Pranav balancing on a wooden log frame against a blue sky in a Madrid park" loading="lazy" width="1050" height="1400"><figcaption>Madrid, on a sunny day with too much energy.</figcaption></figure>
+      <figure class="photo"><img src="img/santander-rock.jpg" alt="Pranav at the seafront railing looking at a rock in the sea, Santander" loading="lazy" width="1050" height="1400"><figcaption>Santander seafront.</figcaption></figure>
+      <figure class="photo"><img src="img/santander-waves.jpg" alt="Pranav at a railing photographing big waves in Santander" loading="lazy" width="1050" height="1400"><figcaption>Waves on the Cantabrian coast.</figcaption></figure>
     </div>
-    <figure class="photo wide"><img src="img/c4c-valencia.jpg" alt="The Click for Change youth exchange group in front of Valencia Cathedral" loading="lazy" width="825" height="1100" style="aspect-ratio:4/3;object-position:50% 70%"><figcaption>CLICK FOR CHANGE! GROUP · VALENCIA</figcaption></figure>
     <h3>Ports visited</h3>
     <div class="ports">
       <div><span>Valladolid</span><span class="mono">41.65°N</span></div>
@@ -487,7 +618,7 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
 <section class="sec" id="t-contact">
     <span class="kicker">The Lighthouse · signal me</span>
     <h2>Send a signal</h2>
-    <figure class="photo hero"><img src="img/santander.jpg" alt="Pranav sitting on a harbour bollard above the sea in Santander" loading="lazy" width="825" height="1100" style="object-position:50% 45%"><figcaption>SANTANDER, SPAIN · LOOKING OUT TO SEA</figcaption></figure>
+    <div class="pair"><figure class="photo tall"><img src="img/santander-lighthouse.jpg" alt="The Cabo Mayor lighthouse in Santander under a cloudy sky" loading="lazy" width="1050" height="1400"><figcaption>Faro de Cabo Mayor, Santander. A real lighthouse.</figcaption></figure><figure class="photo tall"><img src="img/santander-bench.jpg" alt="Pranav sitting on a bench on a grassy cliff above the sea in Santander" loading="lazy" width="1050" height="1400"><figcaption>Looking out to sea, Santander.</figcaption></figure></div>
     <p>The lighthouse keeps its light on. I'm happy to talk about supply chains, international trade, Erasmus+, or Shazlo.</p>
     <div class="copyrow"><code>pranavdeora@gmail.com</code><button class="btn" type="button" data-copy="pranavdeora@gmail.com">Copy email</button></div>
     <ul class="links">
@@ -694,7 +825,7 @@ scene.fog = new THREE.Fog(0x0b1a2b, 90, 460);
 /* day / night palettes */
 const PAL = {
   day:   {zenith:0x2f6fae, horizon:0xbcd8e6, fog:0xb4cfdc, deep:0x0b3a5a, shallow:0x1d7891, sun:0xfff1d6, sunInt:1.0, hemiSky:0xdfefff, hemiGround:0x24452f, hemiInt:1.0, dirInt:2.4, exposure:0.95},
-  night: {zenith:0x030a17, horizon:0x14304a, fog:0x0d2236, deep:0x020b16, shallow:0x0a2b44, sun:0xcfe0ff, sunInt:0.55, hemiSky:0x3a5b86, hemiGround:0x05090f, hemiInt:0.45, dirInt:0.55, exposure:1.05},
+  night: {zenith:0x10284a, horizon:0x41709a, fog:0x284767, deep:0x0c2c4a, shallow:0x1f557a, sun:0xe2ecff, sunInt:0.95, hemiSky:0x86a6d2, hemiGround:0x1d2a3a, hemiInt:1.05, dirInt:1.35, exposure:1.15},  // moonlit blue, bright enough to read the islands
 };
 const cA=new THREE.Color(), cB=new THREE.Color();
 const mixHex=(a,b,t,out)=>out.copy(cA.set(a)).lerp(cB.set(b),t);
@@ -1039,22 +1170,25 @@ ship.position.set(0,0,34);
 ship.rotation.y=Math.PI;
 
 /* ---------- the sailor who walks ashore ---------- */
-const person=new THREE.Group(); scene.add(person);
+const person=new THREE.Group(); scene.add(person); const _fv=new THREE.Vector3();
 {
   const skin=M(0xb97a52), shirt=M(0xf4f1ea), pants=M(0x22344f), cap=M(0x1f4f8f);
   add(person,new THREE.CapsuleGeometry(.3,.62,4,10),shirt,0,1.27,0);
-  add(person,new THREE.SphereGeometry(.3,16,12),skin,0,1.97,0);
-  { const faceMat=new THREE.MeshBasicMaterial({transparent:true}); const face=add(person,new THREE.CircleGeometry(.27,32),faceMat,0,1.97,.255);
-    const im=new Image(); im.onload=()=>{ const c=document.createElement('canvas'); c.width=c.height=128; const x=c.getContext('2d');
-      x.beginPath(); x.arc(64,64,62,0,Math.PI*2); x.clip(); x.drawImage(im,0,0,128,128);
+  // the round portrait below is the head itself, so nothing hides it
+  { // face: a round portrait that always turns toward the camera, so it reads from any angle
+    const faceMat=new THREE.SpriteMaterial({transparent:true,depthWrite:false});
+    const face=new THREE.Sprite(faceMat); face.position.set(0,2.02,0); face.scale.set(.9,.9,1); face.renderOrder=5; person.add(face); person.userData.face=face;
+    const im=new Image(); im.onload=()=>{ const c=document.createElement('canvas'); c.width=c.height=256; const x=c.getContext('2d');
+      x.beginPath(); x.arc(128,128,126,0,Math.PI*2); x.fillStyle='#f4f1ea'; x.fill();
+      x.save(); x.beginPath(); x.arc(128,128,116,0,Math.PI*2); x.clip(); x.drawImage(im,12,12,232,232); x.restore();
       const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; faceMat.map=t; faceMat.needsUpdate=true; };
     im.onerror=()=>{ face.visible=false; }; im.src='img/face.jpg'; }
-  add(person,new THREE.CylinderGeometry(.31,.31,.13,14),cap,0,2.22,0);
-  add(person,new THREE.BoxGeometry(.34,.05,.24),cap,0,2.17,.24);
+  add(person,new THREE.CylinderGeometry(.36,.36,.12,16),cap,0,2.5,0);
+  add(person,new THREE.BoxGeometry(.4,.05,.26),cap,0,2.46,.3);
   const limb=(x,y,len,w,m)=>{ const g=new THREE.Group(); g.position.set(x,y,0); person.add(g); add(g,new THREE.BoxGeometry(w,len,w+.02),m,0,-len/2,0); return g; };
-  person.userData={ legL:limb(-.14,.86,.84,.17,pants), legR:limb(.14,.86,.84,.17,pants), armL:limb(-.4,1.6,.66,.13,shirt), armR:limb(.4,1.6,.66,.13,shirt) };
+  Object.assign(person.userData,{ legL:limb(-.14,.86,.84,.17,pants), legR:limb(.14,.86,.84,.17,pants), armL:limb(-.4,1.6,.66,.13,shirt), armR:limb(.4,1.6,.66,.13,shirt) });
 }
-person.scale.setScalar(1.6);
+person.scale.setScalar(1.75);
 const DECK_LOCAL=new THREE.Vector3(-1.25,1.45,1.6);
 const P={mode:'aboard', pts:null, outPts:null, seg:0, u:0, deckAt:-1, island:null};
 function deckPoint(out){ return out.copy(DECK_LOCAL).applyMatrix4(shipBody.matrixWorld); }
@@ -1352,6 +1486,8 @@ function step(){
   sky.position.copy(camera.position);
   sun.position.copy(lightDir).multiplyScalar(200).add(ship.position); sun.target.position.copy(ship.position);
 
+  { // keep the face portrait just in front of the body, on the camera side, so the shirt never covers it
+    const f=person.userData.face; if(f){ person.updateMatrixWorld(); _fv.copy(camera.position); person.worldToLocal(_fv); _fv.y=0; if(_fv.lengthSq()>1e-6) _fv.normalize(); f.position.set(_fv.x*.42,2.08,_fv.z*.42); } }
   renderer.render(scene,camera);
   updateLabels();
   requestAnimationFrame(step);
