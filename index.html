@@ -213,8 +213,8 @@ a.stat:hover{border-color:var(--beam)}
 }
 body.intro-on #labels{opacity:0;pointer-events:none}
 #labels{transition:opacity .4s}
-#nav,#menuBtn{transition:opacity .5s ease .2s}
-body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibility:hidden;pointer-events:none;transition:none}
+#nav,#menuBtn,.controls,.hint{transition:opacity .5s ease .2s}
+body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibility:hidden;pointer-events:none;transition:none}
 .tl-main .photo,.tl-main .gallery{max-width:560px}
 @media (max-width:640px){
   body.intro-on .controls,body.intro-on .hint{display:none}
@@ -620,11 +620,16 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
       <li><span class="src">CASTELLÓN DIARIO · 2 MAR 2026 · SPAIN</span><a href="https://castellondiario.com/jovenes-europeos-se-reunen-en-benicassim-para-frenar-los-discursos-de-odio-y-la-desinformacion-digital/" target="_blank" rel="noopener">Young Europeans gather in Benicàssim to stop hate speech and digital disinformation</a><p>Coverage of the Click for Change! youth exchange, in Spanish. The site may not open from India without a VPN.</p></li>
     </ul>
     <div class="channels-head"><h2>My own channels</h2><p>Where I write, film and post, in my own words.</p></div>
-    <ul class="channels">
-      <li><div class="ch-name">LinkedIn</div><div class="ch-body"><div class="ch-stat"><b>7,500+</b> followers · top post 30,800 impressions</div><a href="https://www.linkedin.com/in/pranav-deora/recent-activity/all/" target="_blank" rel="noopener">Semester reflections, Forbes Marshall wrap-up, Erasmus stories ↗</a><p>I write a reflection at the end of every semester. The fourth-semester one reached 30,800 people.</p></div></li>
-      <li><div class="ch-name">Instagram</div><div class="ch-body"><div class="ch-stat"><b>1,600+</b> followers · Lisbon reel 8,500 likes</div><a href="https://www.instagram.com/pranav_deora_/" target="_blank" rel="noopener">@pranav_deora_: travel, Erasmus nights, Ahmedabad rains ↗</a></div></li>
-      <li><div class="ch-name">YouTube</div><div class="ch-body"><div class="ch-stat"><b>24K</b> views on my AU hostel tour</div><a href="https://www.youtube.com/@pranavdeora" target="_blank" rel="noopener">@pranavdeora: campus life, lectures, Spain Diaries ↗</a><p>Including full lecture recordings like MAT 142 and Supply Chain Analytics for classmates.</p></div></li>
-      <li><div class="ch-name">Spotify</div><div class="ch-body"><div class="ch-stat"><b>On air</b> · Stepwell Radio</div><a href="https://open.spotify.com/playlist/7IKE44c8iwZeDiyoZvR7sd" target="_blank" rel="noopener">My shows as RJ and Head of Management ↗</a></div></li>
+    <div class="stats">
+      <div class="stat"><b>7,500+</b><span>LinkedIn followers · top post 30,800 impressions</span></div>
+      <div class="stat"><b>1,600+</b><span>Instagram followers · Lisbon reel 8,500 likes</span></div>
+      <div class="stat"><b>24K</b><span>views on my AU hostel tour, YouTube</span></div>
+      <a class="stat" href="https://open.spotify.com/playlist/7IKE44c8iwZeDiyoZvR7sd" target="_blank" rel="noopener" style="text-decoration:none"><b>On air ↗</b><span>RJ and Head of Management, Stepwell Radio · listen on Spotify</span></a>
+    </div>
+    <ul class="links">
+      <li><span class="src">LINKEDIN</span><a href="https://www.linkedin.com/in/pranav-deora/recent-activity/all/" target="_blank" rel="noopener">Semester reflections, Forbes Marshall wrap-up, Erasmus stories</a><p>I write a reflection at the end of every semester. The fourth-semester one reached 30,800 people.</p></li>
+      <li><span class="src">YOUTUBE · @PRANAVDEORA</span><a href="https://www.youtube.com/@pranavdeora" target="_blank" rel="noopener">Campus life, lectures, Spain Diaries</a><p>Including full lecture recordings like MAT 142 and Supply Chain Analytics for classmates.</p></li>
+      <li><span class="src">INSTAGRAM · @PRANAV_DEORA_</span><a href="https://www.instagram.com/pranav_deora_/" target="_blank" rel="noopener">Travel, Erasmus nights, Ahmedabad rains</a></li>
     </ul>
   </section>
 <section class="sec" id="t-contact">
@@ -771,8 +776,11 @@ const Sound = {
     return URL.createObjectURL(new Blob([buf],{type:'audio/wav'}));
   },
   ensure(){
-    if(!this.el){ this.el=new Audio(this.buildLoop()); this.el.loop=true; this.el.volume=0; }
+    if(!this.el){ this.el=new Audio(this.buildLoop()); this.el.loop=true; this.el.setAttribute('playsinline',''); this.el.volume=0;
+      this.fixedVol = this.el.volume!==0; } // iPhone/iPad: page cannot change volume
     if(!this.ctx){ try{ const AC=window.AudioContext||window.webkitAudioContext; this.ctx=new AC(); this.master=this.ctx.createGain(); this.master.gain.value=.6; this.master.connect(this.ctx.destination); }catch(e){} }
+    if(this.fixedVol && this.ctx && !this.seaGain){ // route the sea through a gain node so it can still be set quieter
+      try{ const src=this.ctx.createMediaElementSource(this.el); this.seaGain=this.ctx.createGain(); this.seaGain.gain.value=0.5; src.connect(this.seaGain); this.seaGain.connect(this.ctx.destination); }catch(e){} }
     if(this.ctx&&this.ctx.state==='suspended') this.ctx.resume().catch(()=>{});
   },
   ui(on){
@@ -783,15 +791,16 @@ const Sound = {
   },
   fade(to,done){
     clearInterval(this.fadeT); const el=this.el;
+    if(this.fixedVol){ done&&done(); return; }
     this.fadeT=setInterval(()=>{ const v=el.volume+(to-el.volume)*0.15; if(Math.abs(to-v)<0.01){ el.volume=to; clearInterval(this.fadeT); done&&done(); } else el.volume=Math.max(0,Math.min(1,v)); },60);
   },
   set(on){
     this.ensure(); this.on=on; this.ui(on);
     if(on){
-      const p=this.el.play();
+      this.el.muted=false; const p=this.el.play();
       if(p&&p.catch) p.catch(()=>{ const h=$('#hint'); h.textContent='Sound is on, but this browser window is blocking audio. Open the site in Chrome or tap anywhere to try again.'; });
       this.fade(0.5);
-    } else this.fade(0,()=>this.el.pause());
+    } else { this.el.muted=true; this.el.pause(); clearInterval(this.fadeT); this.el.volume=this.fixedVol?this.el.volume:0; }
   },
   tone(fr,v,start,dur){
     const ctx=this.ctx, o=ctx.createOscillator(), g=ctx.createGain(); o.type='sine'; o.frequency.value=fr;
