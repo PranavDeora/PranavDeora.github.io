@@ -357,6 +357,19 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
   .pair{gap:10px}
   #textlog .tl-wrap{padding:28px 20px 80px;gap:36px}
 }
+
+/* own channels: its own block, platform names as clear labels */
+.channels-head{margin-top:46px;padding-top:26px;border-top:2px solid var(--ink)}
+#panel .channels-head h2,#textlog .channels-head h2{font-size:1.75rem;font-weight:500;letter-spacing:-.01em}
+#panel .channels-head p,#textlog .channels-head p{color:var(--ink-2);font-style:italic;margin-top:4px}
+.channels{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.channels li{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.ch-name{font-family:"Newsreader",serif;font-weight:600;font-size:1.2rem;color:var(--rust);line-height:1.3}
+.ch-stat{font-size:.95rem;color:var(--ink-2);margin-bottom:4px}
+.ch-stat b{font-size:1.35rem;font-weight:500;color:var(--ink);font-feature-settings:"lnum","tnum"}
+.channels a{font-size:1.05rem;line-height:1.4;display:inline-block}
+#panel .channels p,#textlog .channels p{font-size:.94rem;color:var(--ink-2);margin-top:4px}
+@media (max-width:520px){.channels li{grid-template-columns:1fr;gap:4px}}
 </style>
 </head>
 <body class="intro-on">
@@ -606,17 +619,12 @@ body.intro-on #nav,body.intro-on #menuBtn,body.intro-on #mnav{opacity:0;visibili
       <li><span class="src">PODCAST · ESN VALLADOLID</span><a href="https://open.spotify.com/episode/6StbaM3r4bUZO9o5kpWnux" target="_blank" rel="noopener">Nation to Nation: India with Pranav</a><p>Listen on Spotify.</p></li>
       <li><span class="src">CASTELLÓN DIARIO · 2 MAR 2026 · SPAIN</span><a href="https://castellondiario.com/jovenes-europeos-se-reunen-en-benicassim-para-frenar-los-discursos-de-odio-y-la-desinformacion-digital/" target="_blank" rel="noopener">Young Europeans gather in Benicàssim to stop hate speech and digital disinformation</a><p>Coverage of the Click for Change! youth exchange, in Spanish. The site may not open from India without a VPN.</p></li>
     </ul>
-    <h3>My own channels</h3>
-    <div class="stats">
-      <div class="stat"><b>7,500+</b><span>LinkedIn followers · top post 30,800 impressions</span></div>
-      <div class="stat"><b>1,600+</b><span>Instagram followers · Lisbon reel 8,500 likes</span></div>
-      <div class="stat"><b>24K</b><span>views on my AU hostel tour, YouTube</span></div>
-      <a class="stat" href="https://open.spotify.com/playlist/7IKE44c8iwZeDiyoZvR7sd" target="_blank" rel="noopener" style="text-decoration:none"><b>On air ↗</b><span>RJ and Head of Management, Stepwell Radio · listen on Spotify</span></a>
-    </div>
-    <ul class="links">
-      <li><span class="src">LINKEDIN</span><a href="https://www.linkedin.com/in/pranav-deora/recent-activity/all/" target="_blank" rel="noopener">Semester reflections, Forbes Marshall wrap-up, Erasmus stories</a><p>I write a reflection at the end of every semester. The fourth-semester one reached 30,800 people.</p></li>
-      <li><span class="src">YOUTUBE · @PRANAVDEORA</span><a href="https://www.youtube.com/@pranavdeora" target="_blank" rel="noopener">Campus life, lectures, Spain Diaries</a><p>Including full lecture recordings like MAT 142 and Supply Chain Analytics for classmates.</p></li>
-      <li><span class="src">INSTAGRAM · @PRANAV_DEORA_</span><a href="https://www.instagram.com/pranav_deora_/" target="_blank" rel="noopener">Travel, Erasmus nights, Ahmedabad rains</a></li>
+    <div class="channels-head"><h2>My own channels</h2><p>Where I write, film and post, in my own words.</p></div>
+    <ul class="channels">
+      <li><div class="ch-name">LinkedIn</div><div class="ch-body"><div class="ch-stat"><b>7,500+</b> followers · top post 30,800 impressions</div><a href="https://www.linkedin.com/in/pranav-deora/recent-activity/all/" target="_blank" rel="noopener">Semester reflections, Forbes Marshall wrap-up, Erasmus stories ↗</a><p>I write a reflection at the end of every semester. The fourth-semester one reached 30,800 people.</p></div></li>
+      <li><div class="ch-name">Instagram</div><div class="ch-body"><div class="ch-stat"><b>1,600+</b> followers · Lisbon reel 8,500 likes</div><a href="https://www.instagram.com/pranav_deora_/" target="_blank" rel="noopener">@pranav_deora_: travel, Erasmus nights, Ahmedabad rains ↗</a></div></li>
+      <li><div class="ch-name">YouTube</div><div class="ch-body"><div class="ch-stat"><b>24K</b> views on my AU hostel tour</div><a href="https://www.youtube.com/@pranavdeora" target="_blank" rel="noopener">@pranavdeora: campus life, lectures, Spain Diaries ↗</a><p>Including full lecture recordings like MAT 142 and Supply Chain Analytics for classmates.</p></div></li>
+      <li><div class="ch-name">Spotify</div><div class="ch-body"><div class="ch-stat"><b>On air</b> · Stepwell Radio</div><a href="https://open.spotify.com/playlist/7IKE44c8iwZeDiyoZvR7sd" target="_blank" rel="noopener">My shows as RJ and Head of Management ↗</a></div></li>
     </ul>
   </section>
 <section class="sec" id="t-contact">
