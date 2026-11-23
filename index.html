@@ -511,7 +511,7 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
       <div class="stat"><b>Gen Z</b><span>and Millennial shoppers as the first audience</span></div>
     </div>
     <h3>Try the idea</h3>
-    <p class="note">Demo cards to show the swipe. These are not real listings.</p>
+    <p class="note">Demo cards to show the swipe: right to like, left to pass, up to put in your closet, down to add to your bag. These are not real listings.</p>
     <div class="swipe" data-swipe></div>
     <div class="swipe-btns"><button type="button" data-act="pass" aria-label="Pass">✕</button><button type="button" class="wide" data-act="closet">Put to closet</button><button type="button" class="wide" data-act="bag">Add to bag</button><button type="button" data-act="like" aria-label="Like">♥</button></div>
     <p class="note swipe-count" aria-live="polite">Liked 0 · Closet 0 · Bag 0</p>
@@ -702,10 +702,15 @@ function initSwipe(box){
       box.appendChild(c);
     }
     const top=box.lastElementChild;
-    let sx=0,dx=0,drag=false;
-    top.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;top.setPointerCapture(e.pointerId);top.style.transition='none';});
-    top.addEventListener('pointermove',e=>{if(!drag)return;dx=e.clientX-sx;top.style.transform=`translateX(${dx}px) rotate(${dx/14}deg)`;});
-    top.addEventListener('pointerup',()=>{drag=false;top.style.transition='';if(Math.abs(dx)>80)fling(dx>0);else top.style.transform='';dx=0;});
+    let sx=0,sy=0,dx=0,dy=0,drag=false;
+    top.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;sy=e.clientY;dx=dy=0;top.setPointerCapture(e.pointerId);top.style.transition='none';});
+    top.addEventListener('pointermove',e=>{if(!drag)return;dx=e.clientX-sx;dy=e.clientY-sy;
+      top.style.transform = Math.abs(dy)>Math.abs(dx) ? `translateY(${dy}px) scale(${1-Math.min(.12,Math.abs(dy)/1500)})` : `translateX(${dx}px) rotate(${dx/14}deg)`;});
+    const end=()=>{ if(!drag) return; drag=false; top.style.transition='';
+      if(Math.abs(dy)>Math.abs(dx) && Math.abs(dy)>70) act(dy<0?'closet':'bag');
+      else if(Math.abs(dx)>80) fling(dx>0);
+      else top.style.transform=''; dx=dy=0; };
+    top.addEventListener('pointerup',end); top.addEventListener('pointercancel',end);
   }
   const counts={like:0,closet:0,bag:0}, countEl=sec.querySelector('.swipe-count');
   const MOVES={pass:'translateX(-360px) rotate(-24deg)', like:'translateX(360px) rotate(24deg)', closet:'translateY(-320px) scale(.6)', bag:'translateY(320px) scale(.6)'};
