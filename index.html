@@ -134,16 +134,8 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.15;text-w
 .btn.primary{background:var(--beam);color:#1a1205;border-color:var(--beam)}
 .btn.primary:hover{background:#ffd88f}
 .intro-foot{font-family:var(--font-mono);font-size:.72rem;color:var(--mist)}
-.intro-actions .btn{font-size:1rem;padding:13px 22px}
-.intro-actions .btn.primary{font-weight:600;padding:13px 28px}
-.intro-foot{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.sw{display:inline-flex;align-items:center;gap:9px;background:none;border:0;padding:4px 0;color:#e8eef4;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.04em;line-height:1;cursor:pointer;text-shadow:none}
-.sw-track{position:relative;width:34px;height:20px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);transition:background .2s,border-color .2s;flex:none}
-.sw-knob{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform .2s}
-.sw[aria-checked="true"] .sw-track{background:var(--beam);border-color:var(--beam)}
-.sw[aria-checked="true"] .sw-knob{transform:translateX(14px);background:#1a1205}
-.sw:hover .sw-track{border-color:var(--beam)}
-.sw-note{font-family:var(--font-mono);font-size:.72rem;color:var(--mist)}
+.intro-actions .btn{min-width:112px}
+#sndPick[aria-pressed="true"]{border-color:var(--beam);color:var(--beam)}
 
 /* ---------- panel ---------- */
 #panel{position:fixed;top:0;right:0;height:100%;width:min(520px,100%);z-index:10;background:linear-gradient(180deg,rgba(13,34,54,.96),rgba(6,18,31,.97));border-left:1px solid var(--line);transform:translateX(102%);transition:transform .55s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
@@ -240,8 +232,8 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
   .intro-card h1{font-size:2.5rem}
   .intro-card p{font-size:1rem;line-height:1.5}
   .intro-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .intro-actions .btn,.intro-actions .btn.primary{padding:15px 10px}
-  .sw{padding:8px 0;font-size:.95rem}
+  .intro-actions .btn{padding:13px 10px;font-size:.95rem;min-width:0}
+  .intro-actions .btn.primary{grid-column:1/-1}
   .intro-foot{font-size:.7rem}
   .brand{padding:6px 11px}
   .brand b{font-size:.95rem}
@@ -442,12 +434,10 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
     <p>Co-founder of Shazlo. Supply chain student at Ahmedabad University. Erasmus+ scholar who sailed to Spain and came back with a new view of the world. Each island holds one part of the story.</p>
     <div class="intro-actions">
       <button class="btn primary" id="sailGo" type="button">Set sail</button>
+      <button class="btn" id="sndPick" type="button" aria-pressed="false">Sound: off</button>
       <button class="btn" id="readLog" type="button">Read as text</button>
     </div>
-    <div class="intro-foot">
-      <button class="sw" id="sndPick" type="button" role="switch" aria-checked="false"><span class="sw-track" aria-hidden="true"><span class="sw-knob"></span></span><span class="sw-label">Sea sound</span></button>
-      <span class="sw-note">Best with headphones. The lighthouse is where you can reach me.</span>
-    </div>
+    <span class="intro-foot">Best with headphones. The lighthouse is where you can reach me.</span>
   </div>
 </div>
 
@@ -771,7 +761,7 @@ $('#btnLog').addEventListener('click', openText);
 $('#readLog').addEventListener('click', openText);
 $('#backToSea').addEventListener('click', closeText);
 const sndPick=$('#sndPick');
-sndPick.addEventListener('click',()=>{ const on=sndPick.getAttribute('aria-checked')!=='true'; sndPick.setAttribute('aria-checked',on); Sound.set(on); });
+sndPick.addEventListener('click',()=>{ const on=sndPick.getAttribute('aria-pressed')!=='true'; sndPick.setAttribute('aria-pressed',on); sndPick.textContent=on?'Sound: on':'Sound: off'; Sound.set(on); });
 $('#sailGo').addEventListener('click',()=>{ hideIntro(); setTimeout(()=>window.__sailTo&&window.__sailTo('about'),700); });
 $('#readLog').addEventListener('click',()=>{ if(Sound.on) Sound.set(false); });
 
