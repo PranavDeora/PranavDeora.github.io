@@ -537,7 +537,7 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
     <p class="note">Demo cards to show the swipe: right to like, left to pass, up to put in your closet, down to add to your bag. These are not real listings.</p>
     <div class="swipe" data-swipe></div>
     <div class="swipe-btns"><button type="button" data-act="pass" aria-label="Pass">✕</button><button type="button" class="wide" data-act="closet">Put to closet</button><button type="button" class="wide" data-act="bag">Add to bag</button><button type="button" data-act="like" aria-label="Like">♥</button></div>
-    <p class="note swipe-count" aria-live="polite">Liked 0 · Closet 0 · Bag 0</p>
+    <p class="note swipe-count" aria-live="polite">Liked 0 · Passed 0 · Closet 0 · Bag 0</p>
     <ul class="links">
       <li><span class="src">WEBSITE</span><a href="https://shazlo.store" target="_blank" rel="noopener">shazlo.store</a></li>
       <li><span class="src">INSTAGRAM</span><a href="https://www.instagram.com/shazlo.store/" target="_blank" rel="noopener">@shazlo.store</a></li>
@@ -735,12 +735,12 @@ function initSwipe(box){
       else top.style.transform=''; dx=dy=0; };
     top.addEventListener('pointerup',end); top.addEventListener('pointercancel',end);
   }
-  const counts={like:0,closet:0,bag:0}, countEl=sec.querySelector('.swipe-count');
+  const counts={like:0,pass:0,closet:0,bag:0}, countEl=sec.querySelector('.swipe-count');
   const MOVES={pass:'translateX(-360px) rotate(-24deg)', like:'translateX(360px) rotate(24deg)', closet:'translateY(-320px) scale(.6)', bag:'translateY(320px) scale(.6)'};
   function act(kind){
     const top=box.lastElementChild; if(!top) return;
     top.style.transform=MOVES[kind]; top.style.opacity=0;
-    if(counts[kind]!==undefined){ counts[kind]++; countEl.textContent=`Liked ${counts.like} · Closet ${counts.closet} · Bag ${counts.bag}`; }
+    if(counts[kind]!==undefined){ counts[kind]++; countEl.textContent=`Liked ${counts.like} · Passed ${counts.pass} · Closet ${counts.closet} · Bag ${counts.bag}`; }
     setTimeout(()=>{ i=(i+1)%DEMO.length; render(); },300);
   }
   const fling=right=>act(right?'like':'pass');
