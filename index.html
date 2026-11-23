@@ -97,7 +97,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.15;text-w
 
 .menu-btn{display:none;pointer-events:auto;align-items:center;gap:8px;background:rgba(6,18,31,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:10px 14px;cursor:pointer;font-size:.92rem;font-weight:600}
 .menu-btn svg{width:18px;height:18px}
-.mnav{position:fixed;top:70px;right:12px;left:12px;z-index:9;display:flex;flex-direction:column;gap:4px;padding:8px;background:rgba(6,18,31,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.mnav{position:fixed;top:70px;right:12px;left:12px;z-index:12;display:flex;flex-direction:column;gap:4px;padding:8px;background:rgba(6,18,31,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.4)}
 .mnav[hidden]{display:none}
 .mnav button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;background:none;border:0;border-radius:10px;padding:11px 12px;cursor:pointer}
 .mnav button b{font-size:1rem}
@@ -1374,7 +1374,7 @@ const menuBtn=$('#menuBtn'), mnav=$('#mnav');
 function closeMenu(){ mnav.hidden=true; menuBtn.setAttribute('aria-expanded','false'); }
 menuBtn.addEventListener('click',()=>{ const open=mnav.hidden; mnav.hidden=!open; menuBtn.setAttribute('aria-expanded',String(open)); });
 mnav.querySelector('[data-text]').addEventListener('click',()=>{ closeMenu(); openText(); });
-canvas.addEventListener('pointerdown',closeMenu);
+canvas.addEventListener('pointerdown',closeMenu); $('#panel').addEventListener('pointerdown',closeMenu);
 $('#brand').addEventListener('click',()=>sailTo('about'));
 addEventListener('keydown',e=>{ if(e.target.closest&&e.target.closest('input,textarea')) return; keys[e.key.toLowerCase()]=true; if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright'].includes(e.key.toLowerCase())){ closePanel(); depart(()=>{ nav.target=null; nav.dest=null; nav.stage=null; }); } if(e.key==='Escape'){ closePanel(); closeText(); } });
 addEventListener('keyup',e=>{ keys[e.key.toLowerCase()]=false; });
