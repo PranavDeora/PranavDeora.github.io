@@ -187,7 +187,9 @@ blockquote cite a{color:var(--mist)}
 blockquote cite a:hover{color:var(--beam)}
 a.stat:hover{border-color:var(--beam)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.sdgs{display:flex;flex-wrap:wrap;gap:8px;margin-top:-2px}
+.sdgs .sdg{white-space:nowrap}
+.sdg{display:inline-block;vertical-align:.15em;margin:2px 0;line-height:1.2}
+.sdgs .sdg{margin-right:6px}
 .sdg{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:#d4e1e7}
 #panel .sdg,#textlog .sdg{border-color:var(--sea);color:var(--sea)}
 .chip{font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:#d4e1e7}
@@ -530,13 +532,12 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
     <h2>Swipe to style.</h2>
     <p>Shazlo is a swipe-based fashion discovery app for Millennials and Gen Z. Instead of scrolling through endless catalogues, you see one piece at a time and swipe: right if you like it, left to pass, up to save it to a closet, down to add it to your bag. You can share your closets with friends and buy right in the app.</p>
     <p>We built Shazlo for small, local, artisan and sustainable brands that get lost on big marketplaces. It gives them a place to be found by shoppers who are likely to love what they make.</p>
-    <p>Every swipe shows brands what shoppers actually want, so they can make what sells and waste less.</p>
-    <p class="sdgs"><span class="sdg">SDG 8 · Economic growth</span><span class="sdg">SDG 12 · Responsible production</span></p>
+    <p>Every swipe shows brands what shoppers actually want, so they can make what sells and waste less. <span class="sdgs"><span class="sdg">SDG 8 · Economic growth</span><span class="sdg">SDG 12 · Responsible production</span></span></p>
     <p>I co-founded Shazlo with Darsh Modi, Maurya Samanta and Nabyendu Das, and I lead it as CEO.</p>
     <div class="stats">
       <div class="stat"><b>₹75,000</b><span>grant through Ahmedabad University Venture Studio (SSIP 2.0)</span></div>
       <div class="stat"><b>6</b><span>fashion brands confirmed to list products</span></div>
-      <div class="stat"><b>2</b><span>app stores: App Store and Google Play, ahead of public launch</span></div>
+      <div class="stat"><b>Live</b><span>on the App Store and Google Play, before our official launch</span></div>
       <div class="stat"><b>Gen Z</b><span>and Millennial shoppers as the first audience</span></div>
     </div>
     <h3>Try the idea</h3>
