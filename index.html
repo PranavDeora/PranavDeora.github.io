@@ -187,6 +187,9 @@ blockquote cite a{color:var(--mist)}
 blockquote cite a:hover{color:var(--beam)}
 a.stat:hover{border-color:var(--beam)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.sdgs{display:flex;flex-wrap:wrap;gap:8px;margin-top:-2px}
+.sdg{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:#d4e1e7}
+#panel .sdg,#textlog .sdg{border-color:var(--sea);color:var(--sea)}
 .chip{font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:#d4e1e7}
 .links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .links li{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:rgba(6,18,31,.35)}
@@ -515,9 +518,8 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
       <li><span class="when">2024 – 2025</span><div class="what">Dean's Recognition Award</div><div class="where">Top 1% for academic performance</div></li>
       <li><span class="when">2024</span><div class="what">Verbal Mention, PDEU Youth Parliament</div><div class="where">Pandit Deendayal Energy University · my first MUN</div></li>
     </ul>
-    <h3>Lessons from the voyage so far</h3>
+    <h3>A lesson from the voyage so far</h3>
     <blockquote>Opportunities come from the right connections, the right mindset, and the courage to take initiative.<cite><a href="https://ahduni.edu.in/blog/how-a-chance-encounter-landed-me-an-internship-with-forbes-marshall/" target="_blank" rel="noopener">FROM MY STORY ON THE AHMEDABAD UNIVERSITY BLOG, OCT 2025 ↗</a></cite></blockquote>
-    <blockquote>Ahmedabad University gave me that platform; Forbes Marshall gave me the stage to perform.<cite><a href="https://ahduni.edu.in/blog/how-a-chance-encounter-landed-me-an-internship-with-forbes-marshall/" target="_blank" rel="noopener">READ THE FULL STORY ↗</a></cite></blockquote>
     <h3>Toolkit</h3>
     <div class="chips"><span class="chip">Oracle ERP</span><span class="chip">Strategic sourcing</span><span class="chip">Vendor management</span><span class="chip">Power BI</span><span class="chip">Excel</span><span class="chip">R</span><span class="chip">Gurobi</span><span class="chip">5S &amp; Kaizen</span><span class="chip">Negotiation</span><span class="chip">Public speaking</span><span class="chip">Event management</span></div>
     <h3>Languages</h3>
@@ -526,8 +528,10 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
 <section class="sec" id="t-shazlo">
     <span class="kicker">Shazlo Island · founded Aug 2025</span>
     <h2>Swipe to style.</h2>
-    <p>Shazlo is a swipe-based fashion discovery app for Millennials and Gen Z. Instead of scrolling through endless catalogues, you see one piece at a time and swipe on what you like. You can save your finds into closets, share them with friends, and buy them right in the app.</p>
-    <p>We built Shazlo for small, local, artisan and sustainable labels that get lost on big marketplaces. It gives them a place to be found by shoppers who are likely to love what they make.</p>
+    <p>Shazlo is a swipe-based fashion discovery app for Millennials and Gen Z. Instead of scrolling through endless catalogues, you see one piece at a time and swipe: right if you like it, left to pass, up to save it to a closet, down to add it to your bag. You can share your closets with friends and buy right in the app.</p>
+    <p>We built Shazlo for small, local, artisan and sustainable brands that get lost on big marketplaces. It gives them a place to be found by shoppers who are likely to love what they make.</p>
+    <p>Every swipe tells brands what shoppers actually want, so they can make less and waste less.</p>
+    <p class="sdgs"><span class="sdg">SDG 8 · Economic growth</span><span class="sdg">SDG 12 · Responsible production</span></p>
     <p>I co-founded Shazlo with Darsh Modi, Maurya Samanta and Nabyendu Das, and I lead it as CEO.</p>
     <div class="stats">
       <div class="stat"><b>₹75,000</b><span>grant through Ahmedabad University Venture Studio (SSIP 2.0)</span></div>
@@ -536,7 +540,7 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
       <div class="stat"><b>Gen Z</b><span>and Millennial shoppers as the first audience</span></div>
     </div>
     <h3>Try the idea</h3>
-    <p class="note">Demo cards to show the swipe: right to like, left to pass, up to put in your closet, down to add to your bag. These are not real listings.</p>
+    <p class="note">Demo cards, not real listings. Try swiping.</p>
     <div class="swipe" data-swipe></div>
     <div class="swipe-btns"><button type="button" data-act="pass" aria-label="Pass">✕</button><button type="button" class="wide" data-act="closet">Put to closet</button><button type="button" class="wide" data-act="bag">Add to bag</button><button type="button" data-act="like" aria-label="Like">♥</button></div>
     <p class="note swipe-count" aria-live="polite">Liked 0 · Passed 0 · Closet 0 · Bag 0</p>
@@ -708,10 +712,10 @@ const $ = s => document.querySelector(s);
 const panel = $('#panel'), panelBody = $('#panelBody');
 
 const DEMO = [
-  ['Indigo block-print shirt','Hand-printed · small label, Jaipur','linear-gradient(160deg,#27466b,#1b2b44 60%,#c79a4b)'],
+  ['Indigo block-print shirt','Hand-printed · small brand, Jaipur','linear-gradient(160deg,#27466b,#1b2b44 60%,#c79a4b)'],
   ['Upcycled denim tote','Zero-waste studio · Ahmedabad','linear-gradient(160deg,#5a7fa3,#2c3e57)'],
   ['Kalamkari kurta','Artisan collective · Andhra Pradesh','linear-gradient(160deg,#8a3b2b,#3b1f1a 70%,#d8a657)'],
-  ['Linen co-ord set','Slow-fashion label · Bengaluru','linear-gradient(160deg,#c9b99a,#7d6c55)'],
+  ['Linen co-ord set','Slow-fashion brand · Bengaluru','linear-gradient(160deg,#c9b99a,#7d6c55)'],
   ['Bandhani dupatta','Family workshop · Kutch','linear-gradient(160deg,#b8324a,#5a1a2a 65%,#f2c14e)'],
 ];
 function initSwipe(box){
