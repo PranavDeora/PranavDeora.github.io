@@ -190,6 +190,8 @@ a.stat:hover{border-color:var(--beam)}
 .sdgs .sdg{white-space:nowrap}
 .sdg{display:inline-block;vertical-align:.15em;margin:2px 0;line-height:1.2}
 .sdgs .sdg{margin-right:6px}
+@media (max-width:640px){.sdgs{display:block;margin-top:8px}.sdgs .sdg{font-size:.62rem;letter-spacing:.03em;padding:4px 8px;margin-right:4px}.sdg-long{display:none}}
+@media (max-width:374px){.sdgs .sdg{font-size:.56rem;letter-spacing:0;padding:4px 7px;margin-right:3px}}
 .sdg{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:#d4e1e7}
 #panel .sdg,#textlog .sdg{border-color:var(--sea);color:var(--sea)}
 .chip{font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:#d4e1e7}
@@ -532,7 +534,7 @@ body.intro-on .controls,body.intro-on .hint,body.intro-on #nav,body.intro-on #me
     <h2>Swipe to style.</h2>
     <p>Shazlo is a swipe-based fashion discovery app for Millennials and Gen Z. Instead of scrolling through endless catalogues, you see one piece at a time and swipe: right if you like it, left to pass, up to save it to a closet, down to add it to your bag. You can share your closets with friends and buy right in the app.</p>
     <p>We built Shazlo for small, local, artisan and sustainable brands that get lost on big marketplaces. It gives them a place to be found by shoppers who are likely to love what they make.</p>
-    <p>Every swipe shows brands what shoppers actually want, so they can make what sells and waste less. <span class="sdgs"><span class="sdg">SDG 8 · Economic growth</span><span class="sdg">SDG 12 · Responsible production</span></span></p>
+    <p>Every swipe shows brands what shoppers actually want, so they can make what sells and waste less. <span class="sdgs"><span class="sdg">SDG 8 · <span class="sdg-long">Economic </span>growth</span><span class="sdg">SDG 12 · Responsible production</span></span></p>
     <p>I co-founded Shazlo with Darsh Modi, Maurya Samanta and Nabyendu Das, and I lead it as CEO.</p>
     <div class="stats">
       <div class="stat"><b>₹75,000</b><span>grant through Ahmedabad University Venture Studio (SSIP 2.0)</span></div>
